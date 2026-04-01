@@ -1,0 +1,2592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PETAL PALACE</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <section class="one">
+        <h5 style="color: rgb(226, 231, 235)">...</h5>
+
+        <h5 id="t01">THE PETAL PALACE</h2>
+
+        <h2 class="title" id="t1">THE PETAL PALACE</h2>
+        <ul class="list">
+            <li class="dropdown">
+                <a class="index" href="" id="ten1">SHOP BY COLLECTION</a>
+                <ul class="submenu">
+                    <li><a href="./Flowerbox.html" class="five" onclick="showBoxCollection(event)">Flowers In A Box</a>
+                    </li>
+                    <li><a href="./Flowervase.html" class="five" onclick="showVaseCollection(event)">Flowers In A
+                            Base</a></li>
+                    <li><a href="./Bunches.html" class="five" onclick="bunchesCollection(event)">Bunches</a></li>
+                    <li><a href="./Luxury.html" class="five" onclick="luxuryCollection(event)">Luxury</a></li>
+
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="index" href="./Home.html" id="ten2">HOME</a>
+
+            </li>
+            <li id="dropdown1">
+                <a class="index" href="" id="ten3">SHOP BY OCCASIONS</a>
+                <ul id="submenu1">
+                    <li><a href="./Birthday.html" onclick="birthday(event)">BIRTHDAY</a></li>
+                    <li><a href="./Anniversary.html" onclick="anniversary(event)">ANNIVERSARY</a></li>
+                    <li><a href="./Valentine.html" onclick="valentine(event)">VALENTINE DAY</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="index" href="./ContactUs.html" target="_blank" id="ten4">CONTACT US</a>
+            </li>
+
+
+        </ul>
+
+
+         <div class="arrow0">
+
+
+                <a href="javascript:void(0)" class="arrow">
+
+                    <i class="fa-solid fa-cart-arrow-down" id="aa"></i>
+
+                    <span id="cartCount" class="arrow1">
+
+                    </span>
+                </a>
+
+
+
+                <a href="javascript:void(0)" onclick="toggleSearch()" class="arrow2">
+                    <i class="fa-solid fa-magnifying-glass" id="aa"></i>
+                </a><a href="javascript:void(0)" onclick="openLoginModal()">
+                    <i class="fa-solid fa-user" id="aa"></i>
+                </a>
+            </div>
+    </section>
+    <section>
+
+        
+
+
+            <div id="searchOverlay">
+                <div class="search-content">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search flowers..."
+                        onkeyup="searchFlowers()">
+
+                    <button class="btn btn-outline-danger mt-3" onclick="closeSearch()">
+                        Cancel
+                    </button>
+
+                    <p id="noResult" style="display:none; color:red; margin-top:10px;">
+                        No match result
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4">
+
+                <!-- LOGIN -->
+                <div id="loginBox">
+                    <h5 class="text-center">Login</h5>
+
+                    <input type="email" id="loginEmail" class="form-control mb-2" placeholder="Email">
+                    <input type="password" id="loginPassword" class="form-control mb-2" placeholder="Password">
+
+                    <button class="btn btn-primary w-100 mb-2" onclick="loginUser()">Login</button>
+
+                    <div class="text-center">
+                        <a href="#" onclick="openCreateAccount()">Create Account</a> |
+                        <a href="#" onclick="openForgotPassword()">Forgot?</a>
+                    </div>
+                </div>
+
+                <!-- CREATE ACCOUNT -->
+                <div id="createAccountBox" class="d-none">
+                    <h5 class="text-center">Create Account</h5>
+
+                    <input type="text" id="regName" class="form-control mb-2" placeholder="Name">
+                    <input type="email" id="regEmail" class="form-control mb-2" placeholder="Email">
+                    <input type="password" id="regPassword" class="form-control mb-2" placeholder="Password">
+
+                    <button class="btn btn-success w-100 mb-2" onclick="registerUser()">Create</button>
+
+                    <div class="text-center">
+                        <a href="#" onclick="backToLogin()">Back to Login</a>
+                    </div>
+                </div>
+
+                <!-- FORGOT PASSWORD -->
+                <div id="forgotBox" class="d-none">
+                    <h5 class="text-center">Forgot Password</h5>
+
+                    <input type="email" id="forgotEmail" class="form-control mb-2" placeholder="Registered Email">
+
+                    <button class="btn btn-warning w-100 mb-2" onclick="forgotPassword()">Submit</button>
+
+                    <div class="text-center">
+                        <a href="#" onclick="backToLogin()">Back to Login</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+  
+    <section id="boxcollection" class="container-fluid px-3">
+
+        <h2 class="text-center mb-4 collection-title"
+            style="margin-top: 5px; color: rgb(103, 115, 131); margin-top: 35px;">
+            ANNIVERSARY SPECIAL
+        </h2>
+        <div class="row g-4 " id="row1">
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100 ">
+                    <img src="https://theflowercompany.in/cdn/shop/products/WhatsApp_Image_2020-01-15_at_2.18.12_PM_400x.jpg?v=1580805313"
+                        alt="" style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Classic Heart - I
+                            Choose You</h6>
+                        <p class="product-price" data-price="2000" style="color: rgb(133, 130, 130); font-size: 16px;">
+                            From Rs:2000/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Classic Heart - I Choose You',2000)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-success add-cart-btn"
+                            onclick="orderNow('Classic Heart - I Choose You',2000)">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Roses_400x.jpg?v=1571737875" alt=""
+                        style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Roses – Classic
+                            Cubo</h6>
+                        <p class="product-price" data-price="1500" style="color: rgb(133, 130, 130);font-size: 16px;">
+                            From Rs:1500/-</p>
+                        <button class="btn btn-sm btn-outline-success"
+                            onclick="addToCartFromGrid('Roses – Classic Cubo',1500)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary" onclick="orderNow('Roses – Classic Cubo',1500)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Carnations_ab0a6d93-6f8b-400b-b1f6-a8f787860f18_400x.jpg?v=1571737877"
+                        alt="" style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130);font-size: 16px">Carnations - Petite
+                            Heart
+                        </h6>
+                        <p class="product-price" data-price="2350" style="color: rgb(133, 130, 130);font-size: 16px">
+                            From Rs:2350/-</p>
+                        <button class="btn btn-sm btn-outline-success"
+                            onclick="addToCartFromGrid('Carnations - Petite Heart',2350)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Carnations - Petite Heart',2350)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Heart-of-Roses_400x.jpg?v=1571737875" alt=""
+                        style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130);font-size: 16px">Heart of Roses –
+                            Classic Grande</h6>
+                        <p class="product-price" data-price="2500" style="color: rgb(133, 130, 130);font-size: 16px">
+                            From Rs:2500/-</p>
+                        <button class="btn btn-sm btn-outline-success"
+                            onclick="addToCartFromGrid('Heart of Roses – Classic Grande',2500)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Heart of Roses – Classic Grande',2500)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+
+        <div class="row g-4" id="row1">
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100 ">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Roses_e2d2e374-9b5b-434d-b921-1d22dde71f7a_400x.jpg?v=1571737876"
+                        alt="" style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Roses – Petite
+                            Heart</h6>
+                        <p class="product-price" data-price="2100" style="color: rgb(133, 130, 130); font-size: 16px;">
+                            From Rs:2100/-</p>
+                        <button class="btn btn-sm btn-outline-success"
+                            onclick="addToCartFromGrid('Roses – Petite Heart',2100)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-success add-cart-btn"
+                            onclick="orderNow('Roses – Petite Heart',2100)">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Roses-_-Gypsos_984b3443-c4ec-4006-aa03-b9772555256e_400x.jpg?v=1571737876"
+                        alt="" style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Roses & Gypsos –
+                            Classic Heart</h6>
+                        <p class="product-price" data-price="1300" style="color: rgb(133, 130, 130);font-size: 16px;">
+                            From Rs:1300/-</p>
+                        <button class="btn btn-sm btn-outline-success"
+                            onclick="addToCartFromGrid('Roses & Gypsos – Classic Heart',1300)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Roses & Gypsos – Classic Heart',1300)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Allinlove-Granderonde_400x.jpg?v=1639596353"
+                        alt="" style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130);font-size: 16px">All in Love - Grande
+                            Ronde
+                        </h6>
+                        <p class="product-price" data-price="2500" style="color: rgb(133, 130, 130);font-size: 16px">
+                            From Rs:2500/-</p>
+                        <button class="btn btn-sm btn-outline-success"
+                            onclick="addToCartFromGrid('All in Love - Grande Ronde',2500)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('All in Love - Grande Ronde',2500)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/IMG_6615_3_400x.jpg?v=1580816178" alt=""
+                        style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130);font-size: 16px">Classic Heart - Love
+                            Letter</h6>
+                        <p class="product-price" data-price="1500" style="color: rgb(133, 130, 130);font-size: 16px">
+                            From Rs:1500/-</p>
+                        <button class="btn btn-sm btn-outline-success"
+                            onclick="addToCartFromGrid('Classic Heart - Love Letter',1500)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Classic Heart - Love Letter',1500)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+    </section>
+
+    <div class="modal fade" id="orderModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4">
+
+                <h5 id="orderProductName"></h5>
+
+                <input type="text" id="orderName" class="form-control mb-2" placeholder="Name">
+                <input type="text" id="orderPlace" class="form-control mb-2" placeholder="Place">
+
+                <input type="number" id="orderQty" class="form-control mb-2" value="1" min="1">
+
+                <select id="paymentMode" class="form-control mb-2">
+                    <option value="">Payment Mode</option>
+                    <option>Cash on Delivery</option>
+                    <option>UPI</option>
+                    <option>Card</option>
+                </select>
+
+                <textarea id="orderAddress" class="form-control mb-3" placeholder="Address"></textarea>
+
+                <button class="btn btn-success w-100" onclick="submitOrder()">
+                    Submit
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer class=" text-light pt-5 pb-3" id="one" style="background-color:rgb(226, 231, 235) ;">
+        <div class="container">
+            <div class="row text-center ">
+
+
+                <div id="con1">
+                    <h5 class="fst-italic fs-4" style="color: black;"">Contact Us</h5> <br>
+                        <p style=" color: black;"><i class="fa-solid fa-location-dot"></i> India,Tamilnadu</p>
+                        <p style="color: black;" id="aa">
+                            <i class="fa-solid fa-phone text-dark"></i>
+                            <a href="tel:+911234567890" style="color:blue; text-decoration:none;">
+                                Call +91 1234567890
+                            </a>
+                        </p>
+
+                        <p style="color: black;" id="aa">
+                            <i class="fa-regular fa-message text-dark"></i>
+                            <a href="mailto:petalpalace@gmail.com" style="color:blue; text-decoration:none;">
+                                petalpalace@gmail.com
+                            </a>
+                        </p>
+
+                </div>
+
+
+
+                <div >
+                    <h5 class="fst-italic fs-4 " style="color: black;" id="tenpet1">Petal Palace</h5> <br>
+                    <p style="color: black;" id="tenpet">PETAL PALACE, is a stylish flower boutique known for its fresh, vibrant
+                        blooms and creative floral designs.
+                        We specialize in transforming flowers into elegant arrangements that add beauty and emotion
+                        to
+                        every special moment. </p>
+                    <div id="ten002">
+
+                        <a href="https://www.linkedin.com/in/jayamurugan-v-7a3571269" class="text-dark me-2 fs-5"><i
+                                class="fa-brands fa-linkedin" id="two"></i></a>
+                        <a href="https://x.com/JayaMurugan2003" class="text-dark me-2 fs-5"><i
+                                class="fa-brands fa-twitter" id="two"></i></a>
+                        <a href="#" class="text-dark me-2 fs-5"><i class="fa-brands fa-instagram" id="two"></i></a>
+
+                    </div>
+                </div>
+
+
+                <div  id="ten100">
+                    <h5 class="fst-italic fs-4 " style="color: black;">Opening Hours</h5> <br>
+                    <p style="color: black;">Weekdays: 9.00 AM - 9.30 PM</p>
+                    <p style="color: black;"> Weekends: 9.00 AM - 11.00 PM</p>
+                </div>
+            </div>
+
+
+            <div class="text-center mt-4" id="ten001">
+                <p class="mb-0" style="color: black;">© 2025 All Rights Reserved www.petalpalace.com</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function anniversary(e) {
+            e.preventDefault();
+            document.getElementById("boxcollection").style.display = "block";
+        }
+
+
+        let users = [];
+        let loggedInUser = null;
+
+        function openLoginModal() {
+            new bootstrap.Modal(
+                document.getElementById("loginModal")
+            ).show();
+        }
+
+        function registerUser() {
+            const name = regName.value.trim();
+            const email = regEmail.value.trim();
+            const password = regPassword.value.trim();
+
+            if (!name || !email || !password) {
+                alert("Fill all fields");
+                return;
+            }
+
+            const exists = users.find(u => u.email === email);
+            if (exists) {
+                alert("User already exists");
+                return;
+            }
+
+            users.push({ name, email, password });
+            alert("Account created ✅");
+
+            console.log(users);
+            backToLogin();
+        }
+
+
+        function loginUser() {
+            const email = loginEmail.value.trim();
+            const password = loginPassword.value.trim();
+
+            const user = users.find(
+                u => u.email === email && u.password === password
+            );
+
+            if (!user) {
+                alert("Invalid email or password ❌");
+                return;
+            }
+
+            loggedInUser = user;
+            updateCartCount();
+            alert("Welcome " + user.name + " 🎉");
+
+            bootstrap.Modal.getInstance(
+                document.getElementById("loginModal")
+            ).hide();
+        }
+
+        function openLoginModal() {
+            new bootstrap.Modal(
+                document.getElementById("loginModal")
+            ).show();
+        }
+
+
+        function openCreateAccount() {
+            loginBox.classList.add("d-none");
+            forgotBox.classList.add("d-none");
+            createAccountBox.classList.remove("d-none");
+        }
+
+        function openForgotPassword() {
+            loginBox.classList.add("d-none");
+            createAccountBox.classList.add("d-none");
+            forgotBox.classList.remove("d-none");
+        }
+
+        function backToLogin() {
+            createAccountBox.classList.add("d-none");
+            forgotBox.classList.add("d-none");
+            loginBox.classList.remove("d-none");
+        }
+
+        function forgotPassword() {
+            const email = forgotEmail.value.trim();
+
+            const user = users.find(u => u.email === email);
+
+            if (!user) {
+                alert("Email not registered ❌");
+                return;
+            }
+
+            alert("Your password is: " + user.password + " (demo only)");
+            backToLogin();
+        }
+        // order now
+
+        let orders = [];
+        let orderProduct = {};
+
+        function orderNow(name, price) {
+            orderProduct = { name, price };
+
+            document.getElementById("orderProductName").innerText =
+                name + " - Rs." + price;
+
+            new bootstrap.Modal(
+                document.getElementById("orderModal")
+            ).show();
+        }
+
+        function submitOrder() {
+
+            const customerName = document.getElementById("orderName").value.trim();
+            const place = document.getElementById("orderPlace").value.trim();
+            const qty = document.getElementById("orderQty").value;
+            const payment = document.getElementById("paymentMode").value;
+            const address = document.getElementById("orderAddress").value.trim();
+
+            if (!customerName || !place || !payment || !address) {
+                alert("Please fill all details");
+                return;
+            }
+
+            const order = {
+                customerName,
+                place,
+                product: orderProduct.name,
+                price: orderProduct.price,
+                quantity: qty,
+                paymentMode: payment,
+                address,
+                orderTime: new Date().toLocaleString()
+            };
+
+            orders.push(order);
+
+            console.log("All Orders:", orders);
+
+            alert("✅ Order submitted successfully");
+
+            bootstrap.Modal.getInstance(
+                document.getElementById("orderModal")
+            ).hide();
+        }
+
+        function showCart() {
+            if (!loggedInUser) {
+                alert("Please login first");
+                return;
+            }
+
+            const userCart = cart.filter(
+                item => item.user === loggedInUser.email
+            );
+
+            console.log("User Cart:", userCart);
+            alert("Check console for cart items");
+        }
+
+        function toggleSearch() {
+            const overlay = document.getElementById("searchOverlay");
+            const input = document.getElementById("searchInput");
+
+            overlay.style.display = "flex";
+            input.value = "";
+            input.focus();
+
+            document.querySelectorAll(".card").forEach(card => {
+                card.parentElement.style.display = "block";
+            });
+
+            document.getElementById("noResult").style.display = "none";
+        }
+
+        function closeSearch() {
+            document.getElementById("searchOverlay").style.display = "none";
+        }
+
+
+        let cart = [];
+        let selectedProduct = {};
+        let quantity = 1;
+
+        function addToCartFromGrid(name, price) {
+
+            // login check
+            if (!loggedInUser) {
+                alert("Please login to add items to cart");
+                openLoginModal();
+                return;
+            }
+
+            // check if item already exists
+            const item = cart.find(
+                p => p.name === name && p.user === loggedInUser.email
+            );
+
+            if (item) {
+                item.qty += 1;
+            } else {
+                cart.push({
+                    name,
+                    price,
+                    qty: 1,
+                    user: loggedInUser.email
+                });
+            }
+
+            console.log("🛒 Cart:", cart);
+            updateCartCount();   // 👈 ADD THIS
+            alert("✅ Added to cart");
+        }
+
+
+        function updateCartCount() {
+            const cartCount = document.getElementById("cartCount");
+
+            // count only logged-in user's items
+            const userCart = cart.filter(
+                item => item.user === loggedInUser?.email
+            );
+
+            const totalQty = userCart.reduce(
+                (sum, item) => sum + item.qty, 0
+            );
+
+            if (totalQty > 0) {
+                cartCount.innerText = totalQty;
+                cartCount.style.display = "inline-block";
+            } else {
+                cartCount.style.display = "none";
+            }
+        }
+
+        function searchFlowers() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const cards = document.querySelectorAll(".card");
+            let found = false;
+
+            cards.forEach(card => {
+                const name = card.querySelector(".product-name").innerText.toLowerCase();
+
+                if (name.includes(input)) {
+                    card.parentElement.style.display = "block";
+                    found = true;
+                } else {
+                    card.parentElement.style.display = "none";
+                }
+            });
+
+            document.getElementById("noResult").style.display =
+                found || input === "" ? "none" : "block";
+        }
+
+    </script>
+
+
+</body>
+
+</html>
+<style>
+
+
+@media (min-width: 320px) {
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .one {
+            background-color: rgb(226, 231, 235);
+            min-height: 80px;
+            width: 100%;
+
+        }
+
+        #t1 {
+            display: none;
+            text-align: center;
+            margin-left: 0px;
+            margin-top: -20px;
+            color: green;
+            /* position: relative; */
+            font-size: 12px;
+
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -100px;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        #ten1 {
+            font-size: 10px;
+            margin-left: -30px;
+            margin-top: 0px;
+        }
+
+        #ten2 {
+            font-size: 10px;
+            margin-left: -40px;
+            margin-top: 0px;
+        }
+
+        #ten3 {
+            font-size: 10px;
+            margin-left: -50px;
+            margin-top: 0px;
+        }
+
+        #ten4 {
+            font-size: 10px;
+            margin-left: -42px;
+            margin-top: 0px;
+        }
+
+        .list {
+            display: flex;
+            /* align-items: center; */
+
+            list-style: none;
+            gap: 50px;
+            /* justify-content: center; */
+            margin-top: 10px;
+
+        }
+
+        .list>li {
+            position: relative;
+        }
+
+
+        .list>li>a {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .index {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            white-space: nowrap;
+        }
+
+        .index:hover {
+            color: rgb(35, 124, 156);
+        }
+
+        .arrow0 {
+            margin-left: 240px;
+            margin-top: -55px;
+            font-size: 12px;
+        }
+
+        #aa {
+            color: black;
+        }
+
+        .arrow,
+        .arrow2,
+        .arrow0 a {
+            text-decoration: none;
+        }
+
+        #aa:hover {
+            color: rgb(87, 168, 194);
+        }
+
+
+        .submenu {
+            list-style: none;
+            position: absolute;
+            min-width: 150px;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 0;
+            margin: 0;
+            display: none;
+            z-index: 9999;
+            font-size: 13px;
+
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 12px;
+            color: black;
+            background-color: rgb(226, 231, 235);
+            text-decoration: none;
+            /* border: 1px solid; */
+        }
+
+        .submenu li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+
+        #dropdown1 {
+            position: relative;
+        }
+
+        #dropdown1:hover #submenu1 {
+            display: block;
+        }
+
+        #submenu1 {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgb(226, 231, 235);
+            min-width: 200px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 99999;
+            margin-left: 0px;
+            font-size: 13px;
+
+        }
+
+        #submenu1 li a {
+            display: block;
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+        }
+
+        #submenu1 li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        #searchOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+        }
+
+        .search-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+        }
+
+        #hero {
+            margin-top: -78px;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .btn-collection {
+            position: absolute;
+            margin-left: -55px;
+            margin-top: -100px;
+            border: none;
+            background-color: rgb(210, 222, 232);
+            height: 35px;
+            border-radius: 3px;
+        }
+
+        .btn-collection:hover {
+            cursor: pointer;
+            background-color: lightsteelblue;
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        #collection {
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 3s ease;
+        }
+
+        #collection.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .login-btn {
+            background: #f3bfdc;
+            border: none;
+            color: #000;
+            padding: 12px;
+            letter-spacing: 3px;
+        }
+
+        .forgot-link {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #888;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .create-link {
+            color: #000;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .create-link:hover {
+            text-decoration: underline;
+        }
+
+        #ten100 {
+            margin-top: 10px;
+            margin-left: 0px;
+
+            text-align: center;
+        }
+
+        #ten001 {
+            margin-top: 20px;
+            text-align: center;
+            margin-left: 00px;
+        }
+
+        #ten002 {
+            text-align: center;
+            margin-left: 0px;
+            margin-top: -20px;
+
+
+        }
+
+        #ten003 {
+            margin-top: 100px;
+            /* text-align: center; */
+        }
+
+        #tenpet {
+            display: none;
+            text-align: center;
+            margin-left: -400px;
+
+
+
+        }
+
+        #tenpet1 {
+            display: none;
+            text-align: center;
+            font-style: italic;
+            margin-left: -400px;
+
+        }
+
+        #con1 {
+            text-align: center;
+            margin-left: 0px;
+
+        }
+
+        #fbox {
+            margin-top: -80px;
+
+            text-align: center;
+        }
+
+        #row1 {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .col-6,
+        .col-md-3 {
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            width: 50%;
+            max-width: 250px;
+            margin: 0 auto 20px;
+            margin-left: 18px;
+        }
+
+        .container {
+            margin: 0 auto;
+
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+    }
+
+    @media (min-width: 375px) {
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .one {
+            background-color: rgb(226, 231, 235);
+            min-height: 80px;
+            width: 100%;
+
+        }
+
+        #t1 {
+            display: none;
+            text-align: center;
+            margin-left: 0px;
+            margin-top: -20px;
+            color: green;
+            /* position: relative; */
+            font-size: 12px;
+
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -100px;
+            font-size: 18px;
+            font-style: italic;
+
+        }
+
+        #ten1 {
+            font-size: 10px;
+            margin-left: -20px;
+            margin-top: 0px;
+        }
+
+        #ten2 {
+            font-size: 10px;
+            margin-left: -40px;
+            margin-top: 0px;
+        }
+
+        #ten3 {
+            font-size: 10px;
+            margin-left: -50px;
+            margin-top: 0px;
+        }
+
+        #ten4 {
+            font-size: 10px;
+            margin-left: -42px;
+            margin-top: 0px;
+        }
+
+        .list {
+            display: flex;
+            /* align-items: center; */
+
+            list-style: none;
+            gap: 50px;
+            /* justify-content: center; */
+            margin-top: 10px;
+
+        }
+
+        .list>li {
+            position: relative;
+        }
+
+
+        .list>li>a {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .index {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            white-space: nowrap;
+        }
+
+        .index:hover {
+            color: rgb(35, 124, 156);
+        }
+
+        .arrow0 {
+            margin-left: 260px;
+            margin-top: -55px;
+            font-size: 12px;
+        }
+
+        #aa {
+            color: black;
+        }
+
+        .arrow,
+        .arrow2,
+        .arrow0 a {
+            text-decoration: none;
+        }
+
+        #aa:hover {
+            color: rgb(87, 168, 194);
+        }
+
+
+        .submenu {
+            list-style: none;
+            position: absolute;
+            min-width: 150px;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 0;
+            margin: 0;
+            display: none;
+            z-index: 9999;
+            font-size: 13px;
+
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 12px;
+            color: black;
+            background-color: rgb(226, 231, 235);
+            text-decoration: none;
+            /* border: 1px solid; */
+        }
+
+        .submenu li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+        #dropdown1 {
+            position: relative;
+        }
+
+        #dropdown1:hover #submenu1 {
+            display: block;
+        }
+
+        #submenu1 {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgb(226, 231, 235);
+            min-width: 200px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 99999;
+            margin-left: 0px;
+            font-size: 13px;
+
+        }
+
+        #submenu1 li a {
+            display: block;
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+        }
+
+        #submenu1 li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        #searchOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+        }
+
+        .search-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+        }
+
+        #hero {
+            margin-top: -78px;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .btn-collection {
+            position: absolute;
+            margin-left: -55px;
+            margin-top: -100px;
+            border: none;
+            background-color: rgb(210, 222, 232);
+            height: 35px;
+            border-radius: 3px;
+        }
+
+        .btn-collection:hover {
+            cursor: pointer;
+            background-color: lightsteelblue;
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        #collection {
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 3s ease;
+        }
+
+        #collection.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .login-btn {
+            background: #f3bfdc;
+            border: none;
+            color: #000;
+            padding: 12px;
+            letter-spacing: 3px;
+        }
+
+        .forgot-link {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #888;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .create-link {
+            color: #000;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .create-link:hover {
+            text-decoration: underline;
+        }
+
+        #ten100 {
+            margin-top: 10px;
+            margin-left: 0px;
+
+            text-align: center;
+        }
+
+        #ten001 {
+            margin-top: 20px;
+            text-align: center;
+            margin-left: 0px;
+        }
+
+        #ten002 {
+            text-align: center;
+            margin-left: 30px;
+            margin-top: -20px;
+
+
+        }
+
+        #ten003 {
+            margin-top: 100px;
+            /* text-align: center; */
+        }
+
+        #tenpet {
+            text-align: center;
+            margin-left: -400px;
+
+            display: none;
+
+        }
+
+        #tenpet1 {
+            display: none;
+            text-align: center;
+            font-style: italic;
+            margin-left: -400px;
+
+        }
+
+        #con1 {
+            text-align: center;
+            margin-left: 10px;
+
+        }
+
+        #fbox {
+            margin-top: -80px;
+
+            text-align: center;
+        }
+
+        #row1 {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .col-6,
+        .col-md-3 {
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            width: 50%;
+            max-width: 250px;
+            margin: 0 auto 20px;
+            margin-left: 35px;
+        }
+
+        .container {
+            margin: 0 auto;
+
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        #two22 {
+            margin-top: 50px;
+        }
+    }
+
+
+
+
+    @media (min-width: 425px) {
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .one {
+            background-color: rgb(226, 231, 235);
+            min-height: 80px;
+            width: 100%;
+
+        }
+
+        #t1 {
+            display: none;
+            text-align: center;
+            margin-left: 0px;
+            margin-top: -20px;
+            color: green;
+            /* position: relative; */
+            font-size: 12px;
+
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -100px;
+            font-size: 18px;
+            font-style: italic;
+
+        }
+
+        #ten1 {
+            font-size: 10px;
+            margin-left: 30px;
+            margin-top: 0px;
+        }
+
+        #ten2 {
+            font-size: 10px;
+            margin-left: -40px;
+            margin-top: 0px;
+        }
+
+        #ten3 {
+            font-size: 10px;
+            margin-left: -50px;
+            margin-top: 0px;
+        }
+
+        #ten4 {
+            font-size: 10px;
+            margin-left: -42px;
+            margin-top: 0px;
+        }
+
+        .list {
+            display: flex;
+            /* align-items: center; */
+
+            list-style: none;
+            gap: 50px;
+            /* justify-content: center; */
+            margin-top: 10px;
+
+        }
+
+        .list>li {
+            position: relative;
+        }
+
+
+        .list>li>a {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .index {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            white-space: nowrap;
+        }
+
+        .index:hover {
+            color: rgb(35, 124, 156);
+        }
+
+        .arrow0 {
+            margin-left: 320px;
+            margin-top: -55px;
+            font-size: 12px;
+        }
+
+        #aa {
+            color: black;
+        }
+
+        .arrow,
+        .arrow2,
+        .arrow0 a {
+            text-decoration: none;
+        }
+
+        #aa:hover {
+            color: rgb(87, 168, 194);
+        }
+
+
+        .submenu {
+            list-style: none;
+            position: absolute;
+            min-width: 150px;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 0;
+            margin: 0;
+            display: none;
+            z-index: 9999;
+            font-size: 13px;
+
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 12px;
+            color: black;
+            background-color: rgb(226, 231, 235);
+            text-decoration: none;
+            /* border: 1px solid; */
+        }
+
+        .submenu li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+
+        #dropdown1 {
+            position: relative;
+        }
+
+        #dropdown1:hover #submenu1 {
+            display: block;
+        }
+
+        #submenu1 {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgb(226, 231, 235);
+            min-width: 200px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 99999;
+            margin-left: 0px;
+            font-size: 13px;
+
+        }
+
+        #submenu1 li a {
+            display: block;
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+        }
+
+        #submenu1 li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        #searchOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+        }
+
+        .search-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+        }
+
+        #hero {
+            margin-top: -78px;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .btn-collection {
+            position: absolute;
+            margin-left: -55px;
+            margin-top: -100px;
+            border: none;
+            background-color: rgb(210, 222, 232);
+            height: 35px;
+            border-radius: 3px;
+        }
+
+        .btn-collection:hover {
+            cursor: pointer;
+            background-color: lightsteelblue;
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        #collection {
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 3s ease;
+        }
+
+        #collection.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .login-btn {
+            background: #f3bfdc;
+            border: none;
+            color: #000;
+            padding: 12px;
+            letter-spacing: 3px;
+        }
+
+        .forgot-link {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #888;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .create-link {
+            color: #000;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .create-link:hover {
+            text-decoration: underline;
+        }
+
+        #ten100 {
+            margin-top: 10px;
+            margin-left: 0px;
+
+            text-align: center;
+        }
+
+        #ten001 {
+            margin-top: 20px;
+            text-align: center;
+            margin-left: 0px;
+        }
+
+        #ten002 {
+            text-align: center;
+            margin-left: 30px;
+            margin-top: -20px;
+
+
+        }
+
+        #ten003 {
+            margin-top: 100px;
+
+        }
+
+        /* #tenpet{
+            text-align: center;
+        } */
+
+        #con1 {
+            text-align: center;
+            margin-left: 10px;
+
+        }
+
+        #fbox {
+            margin-top: -80px;
+
+            text-align: center;
+        }
+
+        #row1 {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .col-6,
+        .col-md-3 {
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            width: 50%;
+            max-width: 250px;
+            margin: 0 auto 20px;
+            margin-left: 70px;
+        }
+
+        .container {
+            margin: 0 auto;
+
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+
+
+    @media (min-width: 768px) {
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .one {
+            background-color: rgb(226, 231, 235);
+            min-height: 80px;
+            width: 100%;
+
+        }
+
+        #t1 {
+            display: none;
+            text-align: center;
+            margin-left: 0px;
+            margin-top: -20px;
+            color: green;
+            /* position: relative; */
+            font-size: 12px;
+
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -30px;
+            font-size: 25px;
+            font-style: italic;
+
+        }
+
+        #ten1 {
+            font-size: 15px;
+            margin-left: 80px;
+            margin-top: -10px;
+        }
+
+        #ten2 {
+            font-size: 15px;
+            margin-left: -20px;
+            margin-top: -10px;
+        }
+
+        #ten3 {
+            font-size: 15px;
+            margin-left: -20px;
+            margin-top: -10px;
+        }
+
+        #ten4 {
+            font-size: 15px;
+            margin-left: -20px;
+            margin-top: -10px;
+        }
+
+        .list {
+            display: flex;
+            /* align-items: center; */
+
+            list-style: none;
+            gap: 50px;
+            /* justify-content: center; */
+            margin-top: 10px;
+
+        }
+
+        .list>li {
+            position: relative;
+        }
+
+
+        .list>li>a {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .index {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            white-space: nowrap;
+        }
+
+        .index:hover {
+            color: rgb(35, 124, 156);
+        }
+
+        .arrow0 {
+            margin-left: 560px;
+            margin-top: -63px;
+            font-size: 15px;
+        }
+
+        #aa {
+            color: black;
+        }
+
+        .arrow,
+        .arrow2,
+        .arrow0 a {
+            text-decoration: none;
+        }
+
+        #aa:hover {
+            color: rgb(87, 168, 194);
+        }
+
+
+        .submenu {
+            list-style: none;
+            position: absolute;
+            min-width: 150px;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 0;
+            margin: 0;
+            display: none;
+            z-index: 9999;
+            font-size: 16px;
+            margin-left: 50px;
+
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 12px;
+            color: black;
+            background-color: rgb(226, 231, 235);
+            text-decoration: none;
+            /* border: 1px solid; */
+        }
+
+        .submenu li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+        #dropdown1 {
+            position: relative;
+        }
+
+        #dropdown1:hover #submenu1 {
+            display: block;
+        }
+
+        #submenu1 {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgb(226, 231, 235);
+            min-width: 200px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 99999;
+            margin-left: 0px;
+            font-size: 16px;
+
+
+        }
+
+        #submenu1 li a {
+            display: block;
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+        }
+
+        #submenu1 li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        #searchOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+        }
+
+        .search-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+        }
+
+        #hero {
+            margin-top: -78px;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .btn-collection {
+            position: absolute;
+            margin-left: -55px;
+            margin-top: -100px;
+            border: none;
+            background-color: rgb(210, 222, 232);
+            height: 35px;
+            border-radius: 3px;
+        }
+
+        .btn-collection:hover {
+            cursor: pointer;
+            background-color: lightsteelblue;
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        #collection {
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 3s ease;
+        }
+
+        #collection.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .login-btn {
+            background: #f3bfdc;
+            border: none;
+            color: #000;
+            padding: 12px;
+            letter-spacing: 3px;
+        }
+
+        .forgot-link {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #888;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .create-link {
+            color: #000;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .create-link:hover {
+            text-decoration: underline;
+        }
+
+        #ten100 {
+            margin-top: 10px;
+            margin-left: 0px;
+
+            text-align: center;
+        }
+
+        #ten001 {
+            margin-top: 20px;
+            text-align: center;
+            margin-left: 0px;
+        }
+
+        #ten002 {
+            text-align: center;
+            margin-left: 30px;
+            margin-top: -20px;
+
+
+        }
+
+        #ten003 {
+            margin-top: 100px;
+
+        }
+
+        #tenpet {
+            text-align: center;
+        }
+
+        #tenpet1 {
+            text-align: center;
+        }
+
+        #con1 {
+            text-align: center;
+            margin-left: 10px;
+
+        }
+
+        #fbox {
+            margin-top: -80px;
+
+            text-align: center;
+        }
+
+        #row1 {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+
+        }
+
+        .col-6,
+        .col-md-3 {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            width: 220px;
+            max-width: 220px;
+            /* margin: 0; */
+        }
+
+        .container {
+            margin: 0 auto;
+
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+
+
+    @media (min-width: 1024px) {
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .one {
+            background-color: rgb(226, 231, 235);
+            min-height: 80px;
+            width: 100%;
+
+
+        }
+
+        #t1 {
+            display: none;
+            text-align: center;
+            margin-left: 0px;
+            margin-top: -20px;
+            color: green;
+            /* position: relative; */
+            font-size: 12px;
+
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -800px;
+            font-size: 25px;
+            font-style: italic;
+
+        }
+
+        #ten1 {
+            font-size: 15px;
+            margin-left: 400px;
+            margin-top: -30px;
+        }
+
+        #ten2 {
+            font-size: 15px;
+            margin-left: -20px;
+            margin-top: -30px;
+        }
+
+        #ten3 {
+            font-size: 15px;
+            margin-left: -20px;
+            margin-top: -30px;
+        }
+
+        #ten4 {
+            font-size: 15px;
+            margin-left: -20px;
+            margin-top: -30px;
+        }
+
+        .list {
+            display: flex;
+            /* align-items: center; */
+
+            list-style: none;
+            gap: 50px;
+            /* justify-content: center; */
+            margin-top: 10px;
+
+        }
+
+        .list>li {
+            position: relative;
+        }
+
+
+        .list>li>a {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .index {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            white-space: nowrap;
+        }
+
+        .index:hover {
+            color: rgb(35, 124, 156);
+        }
+
+        .arrow0 {
+            margin-left: 1060px;
+            margin-top: -45px;
+            font-size: 15px;
+        }
+
+        #aa {
+            color: black;
+        }
+
+        .arrow,
+        .arrow2,
+        .arrow0 a {
+            text-decoration: none;
+        }
+
+        #aa:hover {
+            color: rgb(87, 168, 194);
+        }
+
+
+        .submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 99999;
+            margin-left: 400px;
+
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .submenu li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        #dropdown1 {
+            position: relative;
+        }
+
+        #dropdown1:hover #submenu1 {
+            display: block;
+        }
+
+        #submenu1 {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgb(226, 231, 235);
+            min-width: 200px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 99999;
+            margin-left: 0px;
+
+        }
+
+        #submenu1 li a {
+            display: block;
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+        }
+
+        #submenu1 li a:hover {
+            background-color: #f2f2f2;
+        }
+
+
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+        #searchOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+        }
+
+        .search-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+        }
+
+        #hero {
+            margin-top: -78px;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .btn-collection {
+            position: absolute;
+            margin-left: -55px;
+            margin-top: -100px;
+            border: none;
+            background-color: rgb(210, 222, 232);
+            height: 35px;
+            border-radius: 3px;
+        }
+
+        .btn-collection:hover {
+            cursor: pointer;
+            background-color: lightsteelblue;
+        }
+
+        #hero.hide {
+
+            height: 0;
+            overflow: hidden;
+        }
+
+        #collection {
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 3s ease;
+        }
+
+        #collection.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .login-btn {
+            background: #f3bfdc;
+            border: none;
+            color: #000;
+            padding: 12px;
+            letter-spacing: 3px;
+        }
+
+        .forgot-link {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #888;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .create-link {
+            color: #000;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .create-link:hover {
+            text-decoration: underline;
+        }
+
+     #ten100 {
+            margin-top: -180px;
+            margin-left: 80px;
+
+            text-align: center;
+        }
+
+        #ten001 {
+            margin-top: 20px;
+            text-align: center;
+            margin-left: 0px;
+        }
+
+        #ten002 {
+            text-align: center;
+            margin-left: 160px;
+            margin-top: 168px;
+
+
+        }
+
+        #ten003 {
+            margin-top: 100px;
+
+        }
+
+        #tenpet {
+            background-color: rgb(226, 231, 235);
+            color: black;
+            display: block;
+            margin-left: 30px;
+            margin-top: -20px;
+        }
+
+        #tenpet1 {
+            background-color: rgb(226, 231, 235);
+            color: black;
+            display: block;
+            margin-left: 0px;
+            margin-top: -300px;
+
+
+        }
+
+        #con1 {
+            text-align: center;
+            margin-left: -200px;
+            margin-top: 100px;
+
+        }
+
+        #fbox {
+            margin-top: -80px;
+
+            text-align: center;
+        }
+
+        #row1 {
+            display: flex;
+            justify-content: center;
+            gap: 0px;
+            flex-wrap: wrap;
+
+        }
+
+        .col-6,
+        .col-md-3 {
+            width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 250px;
+            margin-left: 20px;
+
+        }
+
+
+
+
+
+        .container {
+            margin: 0 auto;
+
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+</style>

@@ -1,0 +1,2456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PETAL PALACE</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <section class="one">
+        <h5 style="color: rgb(226, 231, 235)">...</h5>
+
+        <h5 id="t01">THE PETAL PALACE</h2>
+
+            <h2 class="title" id="t1">THE PETAL PALACE</h2>
+            <ul class="list">
+                <li class="dropdown">
+                    <a class="index" href="" id="ten1">SHOP BY COLLECTION</a>
+                    <ul class="submenu">
+                        <li><a href="./Flowerbox.html" class="five" onclick="showBoxCollection(event)">Flowers In A
+                                Box</a>
+                        </li>
+                        <li><a href="./Flowervase.html" class="five" onclick="showVaseCollection(event)">Flowers In A
+                                Base</a></li>
+                        <li><a href="./Bunches.html" class="five" onclick="bunchesCollection(event)">Bunches</a></li>
+                        <li><a href="./Luxury.html" class="five" onclick="luxuryCollection(event)">Luxury</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="index" href="./Home.html" id="ten2">HOME</a>
+
+                </li>
+                <li class="dropdown">
+                    <a class="index" href="" id="ten3">SHOP BY OCCASIONS</a>
+                    <ul class="submenu">
+                        <li><a href="./Birthday.html" onclick="birthday(event)">BIRTHDAY</a></li>
+                        <li><a href="./Anniversary.html" onclick="anniversary(event)">ANNIVERSARY</a></li>
+                        <li><a href="./Valentine.html" onclick="valentine(event)">VALENTINE DAY</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="index" href="./ContactUs.html" target="_blank" id="ten4">CONTACT US</a>
+                </li>
+
+
+            </ul>
+
+            <div class="arrow0">
+
+
+                <a href="javascript:void(0)" class="arrow">
+
+                    <i class="fa-solid fa-cart-arrow-down" id="aa"></i>
+
+                    <span id="cartCount" class="arrow1">
+
+                    </span>
+                </a>
+
+
+
+                <a href="javascript:void(0)" onclick="toggleSearch()" class="arrow2">
+                    <i class="fa-solid fa-magnifying-glass" id="aa"></i>
+                </a><a href="javascript:void(0)" onclick="openLoginModal()">
+                    <i class="fa-solid fa-user" id="aa"></i>
+                </a>
+            </div>
+
+    </section>
+    <section>
+
+
+
+        <!-- <div id="searchBox" style="display:none;position:relative; z-index:9999; text-align:center; margin-top:15px;">
+            <input type="text" id="searchInput" placeholder="Search flowers..." class="form-control"
+                style="width:300px; display:inline-block;" onkeyup="searchFlowers()" />
+
+            <p id="noResult" style="color:red; margin-top:8px; display:none;">
+                No match result
+            </p>
+        </div> -->
+
+        <div id="searchOverlay">
+            <div class="search-content">
+                <input type="text" id="searchInput" class="form-control" placeholder="Search flowers..."
+                    onkeyup="searchFlowers()">
+
+                <button class="btn btn-outline-danger mt-3" onclick="closeSearch()">
+                    Cancel
+                </button>
+
+                <p id="noResult" style="display:none; color:red; margin-top:10px;">
+                    No match result
+                </p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4">
+
+                <!-- LOGIN -->
+                <div id="loginBox">
+                    <h5 class="text-center">Login</h5>
+
+                    <input type="email" id="loginEmail" class="form-control mb-2" placeholder="Email">
+                    <input type="password" id="loginPassword" class="form-control mb-2" placeholder="Password">
+
+                    <button class="btn btn-primary w-100 mb-2" onclick="loginUser()">Login</button>
+
+                    <div class="text-center">
+                        <a href="#" onclick="openCreateAccount()">Create Account</a> |
+                        <a href="#" onclick="openForgotPassword()">Forgot?</a>
+                    </div>
+                </div>
+
+                <!-- CREATE ACCOUNT -->
+                <div id="createAccountBox" class="d-none">
+                    <h5 class="text-center">Create Account</h5>
+
+                    <input type="text" id="regName" class="form-control mb-2" placeholder="Name">
+                    <input type="email" id="regEmail" class="form-control mb-2" placeholder="Email">
+                    <input type="password" id="regPassword" class="form-control mb-2" placeholder="Password">
+
+                    <button class="btn btn-success w-100 mb-2" onclick="registerUser()">Create</button>
+
+                    <div class="text-center">
+                        <a href="#" onclick="backToLogin()">Back to Login</a>
+                    </div>
+                </div>
+
+                <!-- FORGOT PASSWORD -->
+                <div id="forgotBox" class="d-none">
+                    <h5 class="text-center">Forgot Password</h5>
+
+                    <input type="email" id="forgotEmail" class="form-control mb-2" placeholder="Registered Email">
+
+                    <button class="btn btn-warning w-100 mb-2" onclick="forgotPassword()">Submit</button>
+
+                    <div class="text-center">
+                        <a href="#" onclick="backToLogin()">Back to Login</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="br">
+        <br><br><br><br><br>
+    </div>
+
+    <h2 class="welcome">Welcome You</h2> <br>
+
+    <p class="welcome1">We’d love to
+        hear from you! At Petal Palace, we’re always happy to help you choose the perfect flowers for every occasion.
+        Whether you have a question about our floral arrangements, need help with a custom order, or want to know more
+        about our delivery services, our team is just a message or call away. Reach out to us anytime, and we’ll make
+        sure your experience with Petal Palace is as fresh and beautiful as our blooms.</p>
+
+    <br>
+
+    <div class="container1">
+        <h2 class="us1">Contact Us</h2> <br>
+        <p class="contact">Have a
+            query? Need assistance? Simply reach out for answers. We love staying in touch with you!</p>
+        <div class="row" >
+            <div id="row3">
+                <form action="" class="form1" id="contactForm">
+                    <div>
+                        <label for="name" class="form-label" id="name1">Name</label>
+                        <input type="text" name="" id="name" class="form-control" placeholder="Enter Your Name">
+                    </div>
+                    <div>
+                        <label for="mail" class="form-label" id="mail1">E-Mail</label>
+                        <input type="email" name="" id="mail" class="form-control" placeholder="Enter Your E-Mail">
+                    </div>
+                    <div>
+                        <label for="number" class="form-label" id="number1">Phone Number</label>
+                        <input type="number" name="" id="number" class="form-control"
+                            placeholder="Enter Your Phone Number">
+                    </div>
+                    <div>
+                        <label for="text" class="form-label w-100" id="queryType1">Type A Query?</label>
+                        <select name="" id="queryType" class="form-select">
+                            <option selected>Enquiry</option>
+                            <option value="1">I Want to Place an Order</option>
+                            <option value="2">Order Assistance</option>
+                            <option value="3">Complaint</option>
+
+                        </select>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="message" class="form-label" id="message1">Message</label>
+                            <textarea id="message" class="form-control" placeholder="Enter Your Message"></textarea>
+                        </div>
+                    </div>
+
+                    <br>
+                    <button class="submit">Submit</button>
+                    <br><br>
+                </form>
+
+            </div>
+            <div>
+                <iframe class="map"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3911.4494998404357!2d77.82495707505069!3d11.374862988812634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDIyJzI5LjUiTiA3N8KwNDknMzkuMSJF!5e0!3m2!1sen!2sin!4v1764743768520!5m2!1sen!2sin"
+                     style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+
+    <p style="text-align: center;font-size: 19px;font-family:Georgia, 'Times New Roman', Times, serif;">We’re always
+        here to connect with you at Petal Palace. Whether you’re looking for guidance in selecting the right flowers,
+        need support with a special order, or have questions about our services, our friendly team is ready to assist.
+        Feel free to get in touch with us anytime, and we’ll ensure your journey with Petal Palace is filled with care,
+        elegance, and beautifully crafted blooms.</p>
+    <br><br>
+
+    <footer class=" text-light pt-5 pb-3" id="one" style="background-color:rgb(226, 231, 235) ;">
+        <div class="container">
+            <div class="row text-center ">
+
+
+                <div id="con1">
+                    <h5 class="fst-italic fs-4" style="color: black;" id="con2">Contact Us</h5> <br>
+                        <p style=" color: black;"><i class="fa-solid fa-location-dot"></i> India,Tamilnadu</p>
+                        <p style="color: black;" id="aa">
+                            <i class="fa-solid fa-phone text-dark"></i>
+                            <a href="tel:+911234567890" style="color:blue; text-decoration:none;">
+                                Call +91 1234567890
+                            </a>
+                        </p>
+
+                        <p style="color: black;" id="aa">
+                            <i class="fa-regular fa-message text-dark"></i>
+                            <a href="mailto:petalpalace@gmail.com" style="color:blue; text-decoration:none;">
+                                petalpalace@gmail.com
+                            </a>
+                        </p>
+
+                </div>
+
+
+
+                <div >
+                    <h5 class="fst-italic fs-4 " style="color: black;" id="tenpet">Petal Palace</h5> <br>
+                    <p style="color: black;" id="tenpet1">PETAL PALACE, is a stylish flower boutique known for its
+                        fresh,
+                        vibrant
+                        blooms and creative floral designs.
+                        We specialize in transforming flowers into elegant arrangements that add beauty and
+                        emotion
+                        to
+                        every special moment. </p>
+                    <div id="ten002">
+
+                        <a href="https://www.linkedin.com/in/jayamurugan-v-7a3571269" class="text-dark me-2 fs-5"><i
+                                class="fa-brands fa-linkedin" id="two"></i></a>
+                        <a href="https://x.com/JayaMurugan2003" class="text-dark me-2 fs-5"><i
+                                class="fa-brands fa-twitter" id="two"></i></a>
+                        <a href="#" class="text-dark me-2 fs-5"><i class="fa-brands fa-instagram" id="two"></i></a>
+
+                    </div>
+                </div>
+
+
+                <div  id="ten100">
+                    <h5 class="fst-italic fs-4 " style="color: black;">Opening Hours</h5> <br>
+                    <p style="color: black;">Weekdays: 9.00 AM - 9.30 PM</p>
+                    <p style="color: black;"> Weekends: 9.00 AM - 11.00 PM</p>
+                </div>
+            </div>
+
+
+            <div  id="ten001">
+                <p class="mb-0" style="color: black;">© 2025 All Rights Reserved www.petalpalace.com</p>
+
+            </div>
+        </div>
+
+
+    </footer>
+
+    <script>
+
+        let users = [];
+        let loggedInUser = null;
+
+        function openLoginModal() {
+            new bootstrap.Modal(
+                document.getElementById("loginModal")
+            ).show();
+        }
+
+        function registerUser() {
+            const name = regName.value.trim();
+            const email = regEmail.value.trim();
+            const password = regPassword.value.trim();
+
+            if (!name || !email || !password) {
+                alert("Fill all fields");
+                return;
+            }
+
+            const exists = users.find(u => u.email === email);
+            if (exists) {
+                alert("User already exists");
+                return;
+            }
+
+            users.push({ name, email, password });
+            alert("Account created ✅");
+
+            console.log(users);
+            backToLogin();
+        }
+
+
+        function loginUser() {
+            const email = loginEmail.value.trim();
+            const password = loginPassword.value.trim();
+
+            const user = users.find(
+                u => u.email === email && u.password === password
+            );
+
+            if (!user) {
+                alert("Invalid email or password ❌");
+                return;
+            }
+
+            loggedInUser = user;
+
+            updateCartCount();
+            alert("Welcome " + user.name + " 🎉");
+
+            bootstrap.Modal.getInstance(
+                document.getElementById("loginModal")
+            ).hide();
+        }
+
+
+        function openLoginModal() {
+            new bootstrap.Modal(
+                document.getElementById("loginModal")
+            ).show();
+        }
+
+
+        function openCreateAccount() {
+            loginBox.classList.add("d-none");
+            forgotBox.classList.add("d-none");
+            createAccountBox.classList.remove("d-none");
+        }
+
+        function openForgotPassword() {
+            loginBox.classList.add("d-none");
+            createAccountBox.classList.add("d-none");
+            forgotBox.classList.remove("d-none");
+        }
+
+        function backToLogin() {
+            createAccountBox.classList.add("d-none");
+            forgotBox.classList.add("d-none");
+            loginBox.classList.remove("d-none");
+        }
+
+        function forgotPassword() {
+            const email = forgotEmail.value.trim();
+
+            const user = users.find(u => u.email === email);
+
+            if (!user) {
+                alert("Email not registered ❌");
+                return;
+            }
+
+            alert("Your password is: " + user.password + " (demo only)");
+            backToLogin();
+        }
+        const form = document.getElementById("contactForm");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const data = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("mail").value,
+                phone: document.getElementById("number").value,
+                query: document.getElementById("queryType").value,
+                message: document.getElementById("message").value
+            };
+
+            fetch("https://697878b9cd4fe130e3d90131.mockapi.io/conatctus", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+                .then(res => {
+                    if (!res.ok) throw new Error("API Error");
+                    return res.json();
+                })
+                .then(() => {
+                    alert("✅ Your details have been submitted successfully!");
+                    form.reset();
+                })
+                .catch(() => {
+                    alert("❌ Submission failed. Please check API URL.");
+                });
+        });
+
+        let cart = [];
+        let selectedProduct = {};
+        let quantity = 1;
+
+        function addToCartFromGrid(name, price) {
+
+            // login check
+            if (!loggedInUser) {
+                alert("Please login to add items to cart");
+                openLoginModal();
+                return;
+            }
+
+            // check if item already exists
+            const item = cart.find(
+                p => p.name === name && p.user === loggedInUser.email
+            );
+
+            if (item) {
+                item.qty += 1;
+            } else {
+                cart.push({
+                    name,
+                    price,
+                    qty: 1,
+                    user: loggedInUser.email
+                });
+            }
+
+            console.log("🛒 Cart:", cart);
+            updateCartCount();   // 👈 ADD THIS
+            alert("✅ Added to cart");
+        }
+
+
+        function updateCartCount() {
+            const cartCount = document.getElementById("cartCount");
+
+            // count only logged-in user's items
+            const userCart = cart.filter(
+                item => item.user === loggedInUser?.email
+            );
+
+            const totalQty = userCart.reduce(
+                (sum, item) => sum + item.qty, 0
+            );
+
+            if (totalQty > 0) {
+                cartCount.innerText = totalQty;
+                cartCount.style.display = "inline-block";
+            } else {
+                cartCount.style.display = "none";
+            }
+        }
+
+        function toggleSearch() {
+            const overlay = document.getElementById("searchOverlay");
+            const input = document.getElementById("searchInput");
+
+            overlay.style.display = "flex";
+            input.value = "";
+            input.focus();
+
+            document.querySelectorAll(".card").forEach(card => {
+                card.parentElement.style.display = "block";
+            });
+
+            document.getElementById("noResult").style.display = "none";
+        }
+
+        function closeSearch() {
+            document.getElementById("searchOverlay").style.display = "none";
+        }
+
+        function searchFlowers() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const cards = document.querySelectorAll(".card");
+            let found = false;
+
+            cards.forEach(card => {
+                const name = card.querySelector(".product-name").innerText.toLowerCase();
+
+                if (name.includes(input)) {
+                    card.parentElement.style.display = "block";
+                    found = true;
+                } else {
+                    card.parentElement.style.display = "none";
+                }
+            });
+
+            document.getElementById("noResult").style.display =
+                found || input === "" ? "none" : "block";
+        }
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
+<style>
+    @media (min-width: 320px) {
+
+
+
+        .one {
+            background-color: rgb(226, 231, 235);
+            height: 90px;
+            width: 100vw;
+
+        }
+
+        #t1 {
+            display: none;
+            text-align: center;
+            margin-left: 0px;
+            margin-top: -20px;
+            color: green;
+            /* position: relative; */
+            font-size: 12px;
+
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -100px;
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -100px;
+        }
+
+        #ten1 {
+            font-size: 10px;
+            margin-left: -40px;
+            margin-top: 0px;
+        }
+
+        #ten2 {
+            font-size: 10px;
+            margin-left: -45px;
+            margin-top: 0px;
+        }
+
+        #ten3 {
+            font-size: 10px;
+            margin-left: -58px;
+            margin-top: 0px;
+        }
+
+        #ten4 {
+            font-size: 10px;
+            margin-left: -45px;
+            margin-top: 0px;
+        }
+
+        .list {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            justify-content: center;
+            margin-top: 10px;
+
+        }
+
+        .list>li {
+            position: relative;
+        }
+
+
+        .list>li>a {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .index {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        .index:hover {
+            color: rgb(35, 124, 156);
+        }
+
+        .arrow0 {
+            margin-left: 240px;
+            margin-top: -60px;
+            font-size: 13px;
+        }
+
+        #aa {
+            color: black;
+        }
+
+        .arrow,
+        .arrow2,
+        .arrow0 a {
+            text-decoration: none;
+        }
+
+        #aa:hover {
+            color: rgb(87, 168, 194);
+        }
+
+        .submenu {
+            list-style: none;
+            position: absolute;
+            min-width: 150px;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 0;
+            margin: 0;
+            display: none;
+            z-index: 9999;
+            font-size: 15px;
+
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 12px;
+            color: black;
+            background-color: rgb(226, 231, 235);
+            text-decoration: none;
+            /* border: 1px solid; */
+        }
+
+        .submenu li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+        #searchOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+        }
+
+        .search-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+        }
+
+        #hero {
+            margin-top: -78px;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .btn-collection {
+            position: absolute;
+            margin-left: -55px;
+            margin-top: -100px;
+            border: none;
+            background-color: rgb(210, 222, 232);
+            height: 35px;
+            border-radius: 3px;
+        }
+
+        .btn-collection:hover {
+            cursor: pointer;
+            background-color: lightsteelblue;
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        #collection {
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 3s ease;
+        }
+
+        #collection.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .login-btn {
+            background: #f3bfdc;
+            border: none;
+            color: #000;
+            padding: 12px;
+            letter-spacing: 3px;
+        }
+
+        .forgot-link {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #888;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .create-link {
+            color: #000;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .create-link:hover {
+            text-decoration: underline;
+        }
+
+        #ten100 {
+            margin-top: 30px;
+            /* margin-left: -50px; */
+            text-align: center;
+        }
+
+        #ten001 {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #ten002 {
+            text-align: center;
+        }
+
+        #ten003 {
+            margin-top: 100px;
+            /* text-align: center; */
+        }
+
+
+
+        #tenpet1 {
+            font-style: italic;
+        }
+
+        #con1 {
+            text-align: center;
+        }
+
+
+        .img-fluid {
+
+            height: 850px;
+            width: 650px;
+            margin-left: 5px;
+        }
+
+        .content-box {
+
+            width: 580px;
+        }
+
+        #allcollection {
+
+            margin-top: -35px;
+            color: rgb(103, 115, 131);
+        }
+
+
+
+        .welcome {
+            margin-top: -70px;
+            /* margin-left: 160px; */
+            text-align: center;
+        }
+
+        .welcome1 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-top: -10px;
+            font-size: 20px;
+            /* margin-left: 110px; */
+            text-align: center;
+            width: 100%;
+
+        }
+
+        .submit {
+            background-color: lightsteelblue;
+            border: none;
+            /* margin-left: 110px; */
+            height: 40px;
+            width: 100%;
+            border-radius: 5px;
+            padding: 8px;
+        }
+
+
+        body,
+        html {
+            overflow-x: hidden;
+        }
+
+        .container,
+        .container1 {
+            padding-left: 10px;
+            padding-right: 10px;
+            max-width: 100%;
+        }
+
+
+        nav,
+        .navbar {
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+
+        .us1 {
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .contact {
+            font-size: 13px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .form-control,
+        .form-select,
+        textarea {
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .form-control,
+        .form-select,
+        textarea {
+            font-size: 14px;
+        }
+
+        .map {
+            width: 100% !important;
+            height: 220px;
+            margin-top: 15px;
+            border-radius: 6px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .col-12,
+        .col-md-6 {
+            width: 100% !important;
+            max-width: 100%;
+        }
+
+    }
+
+
+
+
+
+
+
+
+    @media (min-width: 375px) {
+
+        .one {
+            background-color: rgb(226, 231, 235);
+            height: 90px;
+            width: 100vw;
+
+        }
+
+        #t1 {
+            display: none;
+            text-align: center;
+            margin-left: 0px;
+            margin-top: -20px;
+            color: green;
+            /* position: relative; */
+            font-size: 12px;
+
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -100px;
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -100px;
+        }
+
+        #ten1 {
+            font-size: 10px;
+            margin-left: -40px;
+            margin-top: 0px;
+        }
+
+        #ten2 {
+            font-size: 10px;
+            margin-left: -45px;
+            margin-top: 0px;
+        }
+
+        #ten3 {
+            font-size: 10px;
+            margin-left: -58px;
+            margin-top: 0px;
+        }
+
+        #ten4 {
+            font-size: 10px;
+            margin-left: -45px;
+            margin-top: 0px;
+        }
+
+        .list {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            justify-content: center;
+            margin-top: 10px;
+
+        }
+
+        .list>li {
+            position: relative;
+        }
+
+
+        .list>li>a {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .index {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        .index:hover {
+            color: rgb(35, 124, 156);
+        }
+
+        .arrow0 {
+            margin-left: 270px;
+            margin-top: -60px;
+            font-size: 13px;
+        }
+
+        #aa {
+            color: black;
+        }
+
+        .arrow,
+        .arrow2,
+        .arrow0 a {
+            text-decoration: none;
+        }
+
+        #aa:hover {
+            color: rgb(87, 168, 194);
+        }
+
+        .submenu {
+            list-style: none;
+            position: absolute;
+            min-width: 150px;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 0;
+            margin: 0;
+            display: none;
+            z-index: 9999;
+            font-size: 15px;
+
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 12px;
+            color: black;
+            background-color: rgb(226, 231, 235);
+            text-decoration: none;
+            /* border: 1px solid; */
+        }
+
+        .submenu li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+        #searchOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+        }
+
+        .search-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+        }
+
+        #hero {
+            margin-top: -78px;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .btn-collection {
+            position: absolute;
+            margin-left: -55px;
+            margin-top: -100px;
+            border: none;
+            background-color: rgb(210, 222, 232);
+            height: 35px;
+            border-radius: 3px;
+        }
+
+        .btn-collection:hover {
+            cursor: pointer;
+            background-color: lightsteelblue;
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        #collection {
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 3s ease;
+        }
+
+        #collection.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .login-btn {
+            background: #f3bfdc;
+            border: none;
+            color: #000;
+            padding: 12px;
+            letter-spacing: 3px;
+        }
+
+        .forgot-link {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #888;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .create-link {
+            color: #000;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .create-link:hover {
+            text-decoration: underline;
+        }
+
+        #ten100 {
+            margin-top: 30px;
+            /* margin-left: -50px; */
+            text-align: center;
+        }
+
+        #ten001 {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #ten002 {
+            text-align: center;
+        }
+
+        #ten003 {
+            margin-top: 100px;
+            /* text-align: center; */
+        }
+
+
+
+        #tenpet1 {
+            font-style: italic;
+        }
+
+        #con1 {
+            text-align: center;
+        }
+
+
+        .img-fluid {
+
+            height: 850px;
+            width: 650px;
+            margin-left: 5px;
+        }
+
+        .content-box {
+
+            width: 580px;
+        }
+
+        #allcollection {
+
+            margin-top: -35px;
+            color: rgb(103, 115, 131);
+        }
+
+
+
+        .welcome {
+            margin-top: -70px;
+            /* margin-left: 160px; */
+            text-align: center;
+        }
+
+        .welcome1 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-top: -10px;
+            font-size: 20px;
+            /* margin-left: 110px; */
+            text-align: center;
+            width: 100%;
+
+        }
+
+        .submit {
+            background-color: lightsteelblue;
+            border: none;
+            /* margin-left: 110px; */
+            height: 40px;
+            width: 100%;
+            border-radius: 5px;
+            padding: 8px;
+        }
+
+
+        body,
+        html {
+            overflow-x: hidden;
+        }
+
+        .container,
+        .container1 {
+            padding-left: 10px;
+            padding-right: 10px;
+            max-width: 100%;
+        }
+
+
+        nav,
+        .navbar {
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+
+        .us1 {
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .contact {
+            font-size: 13px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .form-control,
+        .form-select,
+        textarea {
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .form-control,
+        .form-select,
+        textarea {
+            font-size: 14px;
+        }
+
+        .map {
+            width: 100% !important;
+            height: 220px;
+            margin-top: 15px;
+            border-radius: 6px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .col-12,
+        .col-md-6 {
+            width: 100% !important;
+            max-width: 100%;
+        }
+    }
+
+
+
+
+
+    @media (min-width: 425px) {
+
+        .one {
+            background-color: rgb(226, 231, 235);
+            height: 90px;
+            width: 100vw;
+
+        }
+
+        #t1 {
+            display: none;
+            text-align: center;
+            margin-left: 0px;
+            margin-top: -20px;
+            color: green;
+            /* position: relative; */
+            font-size: 12px;
+
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -100px;
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -100px;
+        }
+
+        #ten1 {
+            font-size: 13px;
+            margin-left: -40px;
+            margin-top: 0px;
+        }
+
+        #ten2 {
+            font-size: 13px;
+            margin-left: -45px;
+            margin-top: 0px;
+        }
+
+        #ten3 {
+            font-size: 13px;
+            margin-left: -58px;
+            margin-top: 0px;
+        }
+
+        #ten4 {
+            font-size: 13px;
+            margin-left: -45px;
+            margin-top: 0px;
+        }
+
+        .list {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            justify-content: center;
+            margin-top: 10px;
+
+        }
+
+        .list>li {
+            position: relative;
+        }
+
+
+        .list>li>a {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .index {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        .index:hover {
+            color: rgb(35, 124, 156);
+        }
+
+        .arrow0 {
+            margin-left: 340px;
+            margin-top: -60px;
+            font-size: 13px;
+        }
+
+        #aa {
+            color: black;
+        }
+
+        .arrow,
+        .arrow2,
+        .arrow0 a {
+            text-decoration: none;
+        }
+
+        #aa:hover {
+            color: rgb(87, 168, 194);
+        }
+
+        .submenu {
+            list-style: none;
+            position: absolute;
+            min-width: 150px;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 0;
+            margin: 0;
+            display: none;
+            z-index: 9999;
+            font-size: 15px;
+
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 12px;
+            color: black;
+            background-color: rgb(226, 231, 235);
+            text-decoration: none;
+            /* border: 1px solid; */
+        }
+
+        .submenu li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+        #searchOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+        }
+
+        .search-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+        }
+
+        #hero {
+            margin-top: -78px;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .btn-collection {
+            position: absolute;
+            margin-left: -55px;
+            margin-top: -100px;
+            border: none;
+            background-color: rgb(210, 222, 232);
+            height: 35px;
+            border-radius: 3px;
+        }
+
+        .btn-collection:hover {
+            cursor: pointer;
+            background-color: lightsteelblue;
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        #collection {
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 3s ease;
+        }
+
+        #collection.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .login-btn {
+            background: #f3bfdc;
+            border: none;
+            color: #000;
+            padding: 12px;
+            letter-spacing: 3px;
+        }
+
+        .forgot-link {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #888;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .create-link {
+            color: #000;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .create-link:hover {
+            text-decoration: underline;
+        }
+
+        #ten100 {
+            margin-top: 30px;
+            /* margin-left: -50px; */
+            text-align: center;
+        }
+
+        #ten001 {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #ten002 {
+            text-align: center;
+        }
+
+        #ten003 {
+            margin-top: 100px;
+            /* text-align: center; */
+        }
+
+
+
+        #tenpet1 {
+            font-style: italic;
+        }
+
+        #con1 {
+            text-align: center;
+        }
+
+
+        .img-fluid {
+
+            height: 850px;
+            width: 650px;
+            margin-left: 5px;
+        }
+
+        .content-box {
+
+            width: 580px;
+        }
+
+        #allcollection {
+
+            margin-top: -35px;
+            color: rgb(103, 115, 131);
+        }
+
+
+
+        .welcome {
+            margin-top: -70px;
+            /* margin-left: 160px; */
+            text-align: center;
+        }
+
+        .welcome1 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-top: -10px;
+            font-size: 20px;
+            /* margin-left: 110px; */
+            text-align: center;
+            width: 100%;
+
+        }
+
+        .submit {
+            background-color: lightsteelblue;
+            border: none;
+            /* margin-left: 110px; */
+            height: 40px;
+            width: 100%;
+            border-radius: 5px;
+            padding: 8px;
+        }
+
+
+        body,
+        html {
+            overflow-x: hidden;
+        }
+
+        .container,
+        .container1 {
+            padding-left: 10px;
+            padding-right: 10px;
+            max-width: 100%;
+        }
+
+
+        nav,
+        .navbar {
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+
+        .us1 {
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .contact {
+            font-size: 13px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .form-control,
+        .form-select,
+        textarea {
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .form-control,
+        .form-select,
+        textarea {
+            font-size: 14px;
+        }
+
+        .map {
+            width: 100% !important;
+            height: 220px;
+            margin-top: 15px;
+            border-radius: 6px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .col-12,
+        .col-md-6 {
+            width: 100% !important;
+            max-width: 100%;
+        }
+    }
+
+
+
+
+
+
+    @media (min-width: 768px) {
+
+        .one {
+            background-color: rgb(226, 231, 235);
+            height: 90px;
+            width: 100vw;
+
+        }
+
+        #t1 {
+            display: none;
+            text-align: center;
+            margin-left: 0px;
+            margin-top: -20px;
+            color: green;
+            /* position: relative; */
+            font-size: 12px;
+
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -100px;
+            font-size: 25px;
+        }
+
+      
+
+        #ten1 {
+            font-size: 20px;
+            margin-left: -80px;
+            margin-top: 0px;
+        }
+
+        #ten2 {
+            font-size: 20px;
+            margin-left: -35px;
+            margin-top: 0px;
+        }
+
+        #ten3 {
+            font-size: 20px;
+            margin-left: -40px;
+            margin-top: 0px;
+        }
+
+        #ten4 {
+            font-size: 20px;
+            margin-left: -35px;
+            margin-top: 0px;
+        }
+
+        .list {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            justify-content: center;
+            margin-top: 10px;
+
+        }
+
+        .list>li {
+            position: relative;
+        }
+
+
+        .list>li>a {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .index {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        .index:hover {
+            color: rgb(35, 124, 156);
+        }
+
+        .arrow0 {
+            margin-left: 590px;
+            margin-top: -70px;
+            font-size: 16px;
+        }
+
+        #aa {
+            color: black;
+        }
+
+        .arrow,
+        .arrow2,
+        .arrow0 a {
+            text-decoration: none;
+        }
+
+        #aa:hover {
+            color: rgb(87, 168, 194);
+        }
+
+        .submenu {
+            list-style: none;
+            position: absolute;
+            min-width: 150px;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 0;
+            margin: 0;
+            display: none;
+            z-index: 9999;
+            font-size: 15px;
+
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 12px;
+            color: black;
+            background-color: rgb(226, 231, 235);
+            text-decoration: none;
+            /* border: 1px solid; */
+        }
+
+        .submenu li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+        #searchOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+        }
+
+        .search-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+        }
+
+        #hero {
+            margin-top: -78px;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .btn-collection {
+            position: absolute;
+            margin-left: -55px;
+            margin-top: -100px;
+            border: none;
+            background-color: rgb(210, 222, 232);
+            height: 35px;
+            border-radius: 3px;
+        }
+
+        .btn-collection:hover {
+            cursor: pointer;
+            background-color: lightsteelblue;
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        #collection {
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 3s ease;
+        }
+
+        #collection.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .login-btn {
+            background: #f3bfdc;
+            border: none;
+            color: #000;
+            padding: 12px;
+            letter-spacing: 3px;
+        }
+
+        .forgot-link {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #888;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .create-link {
+            color: #000;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .create-link:hover {
+            text-decoration: underline;
+        }
+
+        #ten100 {
+            margin-top: 30px;
+            /* margin-left: -50px; */
+            text-align: center;
+        }
+
+        #ten001 {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #ten002 {
+            text-align: center;
+        }
+
+        #ten003 {
+            margin-top: 100px;
+            /* text-align: center; */
+        }
+
+
+
+        #tenpet1 {
+            font-style: italic;
+        }
+
+        #con1 {
+            text-align: center;
+        }
+
+
+        .img-fluid {
+
+            height: 850px;
+            width: 650px;
+            margin-left: 5px;
+        }
+
+        .content-box {
+
+            width: 580px;
+        }
+
+        #allcollection {
+
+            margin-top: -35px;
+            color: rgb(103, 115, 131);
+        }
+
+
+
+        .welcome {
+            margin-top: -70px;
+            /* margin-left: 160px; */
+            text-align: center;
+        }
+
+        .welcome1 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-top: -10px;
+            font-size: 20px;
+            /* margin-left: 110px; */
+            text-align: center;
+            width: 100%;
+
+        }
+
+        .submit {
+            background-color: lightsteelblue;
+            border: none;
+            margin-left: 110px;
+            height: 40px;
+            width: 70%;
+            margin-top: 10px;
+            border-radius: 5px;
+
+        }
+
+
+        body,
+        html {
+            overflow-x: hidden;
+        }
+
+
+        .container1 {
+            max-width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+
+        }
+
+        nav,
+        .navbar {
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+
+        .us1 {
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .contact {
+            font-size: 13px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .form-control,
+        .form-select,
+        textarea {
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .form1 {
+            width: 100%;
+        }
+
+
+        .map {
+            width: 100%;
+            height: 320px;
+            border-radius: 8px;
+        }
+
+        #con1 {
+            margin-left: -230px;
+            margin-top: 200px;
+            font-size: 20px;
+        }
+
+        #con2{
+            margin-left: 30px;
+            margin-top: -40px;
+        }
+
+        #ten100 {
+            margin-top: -210px;
+            margin-left: 220px;
+            font-size: 20px;
+
+        }
+
+        #h101{
+            margin-left: 70px;
+            margin-top: -30px;
+        }
+
+        #tenpet {
+            text-align: center;
+            font-size: 23px;
+            margin-top: -380px;
+            margin-left: -10px;
+
+        }
+
+        #tenpet1 {
+            text-align: center;
+            font-size: 20px;
+            margin-left: -40px;
+
+        }
+
+        #ten001 {
+           text-align: center;
+           font-size: 20px;
+           margin-top: 40px;
+
+        }
+
+        #ten002 {
+
+            text-align: center;
+            font-size: 65px;
+            margin-top:130px;
+            margin-left: 430px;
+        }
+
+        #ten003 {
+            margin-top: 100px;
+
+        }
+        
+    }
+
+
+    @media (min-width: 1024px) {
+
+
+        .one {
+            background-color: rgb(226, 231, 235);
+            height: 80px;
+            width: 100vw;
+
+        }
+
+        #t1 {
+            display: none;
+            text-align: center;
+            margin-left: 0px;
+            margin-top: -20px;
+            color: green;
+            /* position: relative; */
+            font-size: 12px;
+
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -800px;
+            font-size: 25px;
+            font-style: italic;
+
+        }
+
+        #ten1 {
+            font-size: 15px;
+            margin-left: 60px;
+            margin-top: 0px;
+        }
+
+        #ten2 {
+            font-size: 15px;
+            margin-left: -20px;
+            margin-top: 0px;
+        }
+
+        #ten3 {
+            font-size: 15px;
+            margin-left: -20px;
+            margin-top: 0px;
+        }
+
+        #ten4 {
+            font-size: 15px;
+            margin-left: -20px;
+            margin-top: 0px;
+        }
+
+        .arrow0 {
+            margin-left: 1060px;
+            margin-top: -35px;
+            font-size: 15px;
+        }
+
+        #aa {
+            color: black;
+        }
+
+        .arrow,
+        .arrow2,
+        .arrow0 a {
+            text-decoration: none;
+        }
+
+       
+
+        .list {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            justify-content: center;
+            margin-top: -35px;
+            margin-left: 150px;
+
+        }
+
+        .list>li {
+            position: relative;
+        }
+
+
+        .list>li>a {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+
+        .index {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        .index:hover {
+            color: rgb(35, 124, 156);
+        }
+
+        #aa:hover {
+            color: rgb(87, 168, 194);
+        }
+
+        .submenu {
+            list-style: none;
+            position: absolute;
+            min-width: 200px;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 0;
+            margin: 0;
+            display: none;
+            z-index: 9999;
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 12px 15px;
+            color: black;
+            background-color: rgb(226, 231, 235);
+            text-decoration: none;
+            /* border: 1px solid; */
+        }
+
+        .submenu li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+        .five {
+            font-size: 18px;
+        }
+
+        .container1 {
+            border: 2px solid;
+            height: 680px;
+            width: 600px;
+            margin-left: 15px;
+        }
+
+        .form1 {
+            text-align: center;
+            justify-items: center;
+        }
+
+        .map {
+            height: 690px;
+            margin-left: 650px;
+            margin-top: -750px;
+            
+        }
+
+        #searchOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+        }
+
+        .search-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+        }
+
+        #name {
+            width: 450px;
+          
+
+        }
+
+        #mail {
+            width: 450px;
+         
+        }
+
+        #number {
+            width: 450px;
+            
+        }
+
+        #queryType {
+            width: 450px;
+            
+        }
+
+        #message {
+            width: 450px;
+            height: 150px;
+            
+        }
+
+
+        #name1 {
+
+            text-align: center;
+
+        }
+
+        #mail1 {
+
+            text-align: center;
+        }
+
+        #number1 {
+
+            text-align: center;
+        }
+
+        #queryType1 {
+
+           text-align: center;
+        }
+
+        #message1 {
+
+            text-align: center;
+        }
+
+        .contact {
+            margin-left: 5px;
+            font-size: 18px;
+            font-style: italic;
+            color: rgb(38, 63, 71);
+            text-align: center;
+        }
+
+        .us {
+            text-align: center;
+        }
+
+        .welcome {
+            text-align: center;
+            font-style: italic;
+            margin-top: 30px;
+        }
+
+        .welcome1 {
+            text-align: center;
+            font-size: 19px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .submit {
+            background-color: lightsteelblue;
+            border: none;
+            margin-left: 220px;
+            height: 40px;
+            width: 100px;
+            border-radius: 5px;
+        }
+
+       
+
+        #br {
+            display: none;
+        }
+
+
+        #con1 {
+            margin-left: -200px;
+            margin-top: 230px;
+            font-size: 20px;
+        }
+
+        #con2{
+            margin-left: 10px;
+            margin-top: -100px;
+        }
+
+        #ten100 {
+            margin-top: -210px;
+            margin-left: 140px;
+            font-size: 20px;
+
+        }
+
+        #h101{
+            margin-left: 55px;
+            margin-top: -80px;
+        }
+
+        #tenpet {
+            text-align: center;
+            font-size: 22px;
+            margin-top: -350px;
+            margin-left: -10px;
+
+        }
+
+        #tenpet1 {
+            text-align: center;
+            font-size: 20px;
+            margin-left: -40px;
+
+        }
+
+        #ten001 {
+            margin-top: 50px;
+           text-align: center;
+           font-size: 18px;
+          
+        }
+
+        #ten002 {
+
+            text-align: center;
+            font-size: 65px;
+            margin-top: 118px;
+            margin-left: 330px;
+        }
+
+        #ten003 {
+            margin-top: 100px;
+
+        }
+        
+    }
+    
+</style>

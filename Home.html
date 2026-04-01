@@ -1,0 +1,3599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PETAL PALACE</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <section class="one" id="ten0">
+        <h5 style="color: rgb(226, 231, 235)">...</h5>
+
+
+        <h5 id="t01">THE PETAL PALACE</h2>
+
+
+
+            <ul class="list">
+                <h2 class="title" id="t1">THE PETAL PALACE</h2>
+
+                <li class="dropdown">
+                    <a class="index" href="" id="ten1">SHOP BY COLLECTION</a>
+                    <ul class="submenu">
+                        <li><a href="./Flowerbox.html" class="five" onclick="showBoxCollection(event)">Flowers In A
+                                Box</a>
+                        </li>
+                        <li><a href="./Flowervase.html" class="five" onclick="showVaseCollection(event)">Flowers In A
+                                Vase</a></li>
+                        <li><a href="./Bunches.html" class="five" onclick="bunchesCollection(event)">Bunches</a></li>
+                        <li><a href="./Luxury.html" class="five" onclick="luxuryCollection(event)">Luxury</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown" ">
+                <a class=" index" href="./Home.html" id="ten2">HOME</a>
+
+                </li>
+                <li id="dropdown1">
+                    <a class="index" href="" id="ten3">SHOP BY OCCASIONS</a>
+                    <ul id="submenu1">
+                        <li><a href="./Birthday.html" onclick="birthday(event)">Birthday</a></li>
+                        <li><a href="./Anniversary.html" onclick="anniversary(event)">Anniversary</a></li>
+                        <li><a href="./Valentine.html" onclick="valentine(event)">Valentine Day</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="index" href="./ContactUs.html" target="_blank" id="ten4">CONTACT US</a>
+                </li>
+
+
+
+            </ul>
+
+
+            <div class="arrow0">
+
+
+                <a href="javascript:void(0)" class="arrow">
+
+                    <i class="fa-solid fa-cart-arrow-down" id="aa"></i>
+
+                    <span id="cartCount" class="arrow1">
+
+                    </span>
+                </a>
+
+
+
+                <a href="javascript:void(0)" onclick="toggleSearch()" class="arrow2">
+                    <i class="fa-solid fa-magnifying-glass" id="aa"></i>
+                </a><a href="javascript:void(0)" onclick="openLoginModal()">
+                    <i class="fa-solid fa-user" id="aa"></i>
+                </a>
+            </div>
+    </section>
+
+
+
+    <br>
+    <br>
+    <section>
+
+
+
+        <div id="searchOverlay">
+            <div class="search-content">
+                <input type="text" id="searchInput" class="form-control" placeholder="Search flowers..."
+                    onkeyup="searchFlowers()">
+
+                <button class="btn btn-outline-danger mt-3" onclick="closeSearch()">
+                    Cancel
+                </button>
+
+                <p id="noResult" style="display:none; color:red; margin-top:10px;">
+                    No match result
+                </p>
+            </div>
+        </div>
+
+    </section>
+    <br>
+
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4">
+
+                <!-- LOGIN -->
+                <div id="loginBox">
+                    <h5 class="text-center">Login</h5>
+
+                    <input type="email" id="loginEmail" class="form-control mb-2" placeholder="Email">
+                    <input type="password" id="loginPassword" class="form-control mb-2" placeholder="Password">
+
+                    <button class="btn btn-primary w-100 mb-2" onclick="loginUser()">Login</button>
+
+                    <div class="text-center">
+                        <a href="#" onclick="openCreateAccount()">Create Account</a> |
+                        <a href="#" onclick="openForgotPassword()">Forgot?</a>
+                    </div>
+                </div>
+
+                <!-- CREATE ACCOUNT -->
+                <div id="createAccountBox" class="d-none">
+                    <h5 class="text-center">Create Account</h5>
+
+                    <input type="text" id="regName" class="form-control mb-2" placeholder="Name">
+                    <input type="email" id="regEmail" class="form-control mb-2" placeholder="Email">
+                    <input type="password" id="regPassword" class="form-control mb-2" placeholder="Password">
+
+                    <button class="btn btn-success w-100 mb-2" onclick="registerUser()">Create</button>
+
+                    <div class="text-center">
+                        <a href="#" onclick="backToLogin()">Back to Login</a>
+                    </div>
+                </div>
+
+                <!-- FORGOT PASSWORD -->
+                <div id="forgotBox" class="d-none">
+                    <h5 class="text-center">Forgot Password</h5>
+
+                    <input type="email" id="forgotEmail" class="form-control mb-2" placeholder="Registered Email">
+
+                    <button class="btn btn-warning w-100 mb-2" onclick="forgotPassword()">Submit</button>
+
+                    <div class="text-center">
+                        <a href="#" onclick="backToLogin()">Back to Login</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <section id="hero">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://www.theknot.com/tk-media/images/08967174-3bb4-11e4-843f-22000aa61a3e~rs_1458.h?quality=60"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://media.istockphoto.com/id/2164207000/photo/summer-bouquet-beautiful-multi-colored-fresh-flower-arrangement-birthday-bouquet-made-of.jpg?s=612x612&w=0&k=20&c=7lLUdkx91ZDl-Lw801VIbE6IywD6ULH4B09ZiwoulfQ="
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://media.istockphoto.com/id/902155732/photo/mixed-flower-bouquet.jpg?s=612x612&w=0&k=20&c=kKD8KAl6n1d4kC21ZmOlNFQrMjZKp00iYdFQOg0L_Oo="
+                        class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="text-center">
+            <button class="btn-collection" onclick="showCollection()">View Collection</button>
+        </div>
+    </section>
+
+    <section id="collection" class="container-fluid px-3" style="display: none;">
+
+
+        <h2 class="text-center mb-4 collection-title" id="fbox">
+            ALL COLLECTIONS
+        </h2>
+        <div class="row g-4" id="row1">
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100 ">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Lilies_6f74c55a-326f-4744-8d1d-b5303b8df5ca_400x.jpg?v=1571737875"
+                        alt="">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Lilies –
+                            Classic
+                            Ronde</h6>
+                        <p class="product-price" data-price="1000" style="color: rgb(133, 130, 130); font-size: 16px;">
+                            From Rs:1000/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Lilies – Classic Ronde',1000)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-success add-cart-btn"
+                            onclick="orderNow('Lilies – Classic Ronde',1000)">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Lollipop-Wild-Mix_400x.jpg?v=1571737875"
+                        alt="">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Lollipop Wild
+                            Mix -
+                            Classic Ronde</h6>
+                        <p class="product-price" data-price="1100" style="color: rgb(133, 130, 130);font-size: 16px;">
+                            From Rs:1100/-</p>
+                        <button class="btn btn-sm btn-outline-success"
+                            onclick="addToCartFromGrid('Lollipop Wild Mix -Classic Ronde',1100)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Lollipop Wild Mix -Classic Ronde',1100)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Spring-Mix_0254ecc3-5540-48c8-bb77-7b235986bce1_400x.jpg?v=1571737876"
+                        alt="">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130);font-size: 16px">Spring Mix -
+                            Petite
+                            Ronde</h6>
+                        <p class="product-price" data-price="1080" style="color: rgb(133, 130, 130);font-size: 16px">
+                            From Rs:1080/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Spring Mix - Petite Ronde',1080)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Spring Mix - Petite Ronde',1080)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Roses_600x.jpg?v=1571737875" alt="">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130);font-size: 16px">Personalised
+                            Fridge
+                            Magnet & Orchid Whispers</h6>
+                        <p class="product-price" data-price="1080" style="color: rgb(133, 130, 130);font-size: 16px">
+                            From Rs:1080/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Personalised Fridge Magnet & Orchid Whispers',1080)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Personalised Fridge Magnet & Orchid Whispers',1080)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row g-4" id="row1">
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100 ">
+                    <img src="https://theflowercompany.in/cdn/shop/products/PRODUCTS-21-800x800_400x.jpg?v=1571737875"
+                        alt="">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Special Number
+                            –
+                            Classic Grande</h6>
+                        <p class="product-price" data-price="1000" style="color: rgb(133, 130, 130); font-size: 16px;">
+                            From Rs:1000/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Special Number – Classic Grande,1000')">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Special Number – Classic Grande,1000')">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100 ">
+                    <img src="https://theflowercompany.in/cdn/shop/products/IMG_0313-01-800x800_400x.jpg?v=1571737876"
+                        alt="">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Wild Mix ‘n
+                            Cake-
+                            Classic Grande</h6>
+                        <p class="product-price" data-price="1300" style="color: rgb(133, 130, 130); font-size: 16px;">
+                            From Rs:1300/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Wild Mix ‘n Cake- Classic Grande',1300)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Wild Mix ‘n Cake- Classic Grande',1300)">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100 ">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Wild-Mix_090c10ee-33d6-4417-ace7-f06d2e8307b5_400x.jpg?v=1571737876"
+                        alt="">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Wild Mix –
+                            Petite
+                            Ronde</h6>
+                        <p class="product-price" data-price="1100" style="color: rgb(133, 130, 130); font-size: 16px;">
+                            From Rs:1100/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Wild Mix – Petite Ronde',1100)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Wild Mix – Petite Ronde',1100)">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100 ">
+                    <img src="https://theflowercompany.in/cdn/shop/files/Vibrant-GraneRonde_400x.jpg?v=1683281153"
+                        alt="">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Vibrant –
+                            Grande
+                            Ronde</h6>
+                        <p class="product-price" data-price="1150" style="color: rgb(133, 130, 130); font-size: 16px;">
+                            From Rs:1150/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Vibrant – Grande Ronde',1150)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Vibrant – Grande Ronde',1150)">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row g-4" id="row1">
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100 ">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Spring-Mix_400x.jpg?v=1571737876" alt="">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Spring Mix -
+                            Mega
+                            Grande</h6>
+                        <p class="product-price" data-price="1300" style="color: rgb(133, 130, 130); font-size: 16px;">
+                            From Rs:1300/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Spring Mix - Mega Grande',1300)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Spring Mix - Mega Grande',1300)">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100 ">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Capture0005-4031copy_400x.jpg?v=1639550802"
+                        alt="">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Exotic Mix -
+                            Grande
+                            Ronde</h6>
+                        <p class="product-price" data-price="1500" style="color: rgb(133, 130, 130); font-size: 16px;">
+                            From Rs:1500/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Exotic Mix - Grande Ronde',1500)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Exotic Mix - Grande Ronde',1500)">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100 ">
+                    <img src="https://theflowercompany.in/cdn/shop/files/StardustClassicRonde_400x.jpg?v=1683394579"
+                        alt="">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Stardust -
+                            Classic
+                            Ronde</h6>
+                        <p class="product-price" data-price="1500" style="color: rgb(133, 130, 130); font-size: 16px;">
+                            From Rs:1500/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Stardust - Classic Ronde',1500)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Stardust - Classic Ronde',1500)">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100 ">
+                    <img src="https://theflowercompany.in/cdn/shop/products/lollipop-MoroccanRonde_400x.jpg?v=1636480907"
+                        alt="">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Lollipop -
+                            Moroccan
+                            Ronde</h6>
+                        <p class="product-price" data-price="1250" style="color: rgb(133, 130, 130); font-size: 16px;">
+                            From Rs:1250/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Lollipop - Moroccan Ronde',1250)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Lollipop - Moroccan Ronde',1250)">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4" id="row1">
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100 ">
+                    <img src="https://theflowercompany.in/cdn/shop/products/classicmix-bunch_400x.jpg?v=1636530961"
+                        alt="" style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Classic Mix - Bunch
+                        </h6>
+                        <p class="product-price" data-price="2000" style="color: rgb(133, 130, 130); font-size: 16px;">
+                            From Rs:2000/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Classic Mix - Bunch',2000)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-success add-cart-btn"
+                            onclick="orderNow('Classic Mix - Bunch',2000)">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/files/VibrantGypsos-Bunch_400x.jpg?v=1683399959"
+                        alt="" style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Vibrant Gypsos -
+                            Bunch</h6>
+                        <p class="product-price" data-price="1500" style="color: rgb(133, 130, 130);font-size: 16px;">
+                            From Rs:1500/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Vibrant Gypsos - Bunch',1500)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Vibrant Gypsos - Bunch',1500)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Valentino-Bunch_400x.jpg?v=1674809111"
+                        alt="" style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130);font-size: 16px">Valentino - Bunch
+                        </h6>
+                        <p class="product-price" data-price="2350" style="color: rgb(133, 130, 130);font-size: 16px">
+                            From Rs:2350/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Valentino - Bunch',2350)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary" onclick="orderNow('Valentino - Bunch',2350)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Classic-Bunch_400x.jpg?v=1571737877" alt=""
+                        style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130);font-size: 16px">Classic Bunch</h6>
+                        <p class="product-price" data-price="2500" style="color: rgb(133, 130, 130);font-size: 16px">
+                            From Rs:2500/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Classic Bunch',2500)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary" onclick="orderNow('Classic Bunch',2500)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="row g-4" id="row1">
+            <div class="col-6 col-md-3">
+                <div class="card h-100 w-100 ">
+                    <img src="https://theflowercompany.in/cdn/shop/files/Stardust-Bunch_400x.jpg?v=1683401359" alt=""
+                        style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Stardust - Bunch
+                        </h6>
+                        <p class="product-price" data-price="2100" style="color: rgb(133, 130, 130); font-size: 16px;">
+                            From Rs:2100/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Stardust - Bunch',2100)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-success add-cart-btn"
+                            onclick="orderNow('Stardust - Bunch',2100)">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Roses-Bunch_400x.jpg?v=1571737876" alt=""
+                        style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Roses</h6>
+                        <p class="product-price" data-price="1300" style="color: rgb(133, 130, 130);font-size: 16px;">
+                            From Rs:1300/-</p>
+                        <button class="btn btn-sm btn-outline-success " onclick="addToCartFromGrid('Roses',1300)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary" onclick="orderNow('Roses',1300)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Classic-Valentine-Bunch_400x.jpg?v=1571737876"
+                        alt="" style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130);font-size: 16px">Classic Valentine
+                            Bunch
+                        </h6>
+                        <p class="product-price" data-price="2500" style="color: rgb(133, 130, 130);font-size: 16px">
+                            From Rs:2500/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Classic Valentine Bunch',2500)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Classic Valentine Bunch',2500)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Wildernessinabunch_400x.jpg?v=1637003808"
+                        alt="" style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130);font-size: 16px">Wilderness ( in a
+                            bunch )</h6>
+                        <p class="product-price" data-price="1500" style="color: rgb(133, 130, 130);font-size: 16px">
+                            From Rs:1500/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Wilderness ( in a bunch )',1500)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Wilderness ( in a bunch )',1500)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row g-4" id="row1">
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100 ">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Capture0005-4031copy_400x.jpg?v=1639550802"
+                        alt="" style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Exotic Mix - Grande
+                            Ronde</h6>
+                        <p class="product-price" data-price="3000" style="color: rgb(133, 130, 130); font-size: 16px;">
+                            From Rs:3000/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Exotic Mix - Grande Ronde',3000)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-success add-cart-btn"
+                            onclick="orderNow('Exotic Mix - Grande Ronde',3000)">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/MegaGrandeElite_400x.jpg?v=1634889890"
+                        alt="" style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Mega Grande Elite
+                        </h6>
+                        <p class="product-price" data-price="3500" style="color: rgb(133, 130, 130);font-size: 16px;">
+                            From Rs:3500/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Mega Grande Elite',3500)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary" onclick="orderNow('Mega Grande Elite',3500)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/GrandeCuboElite_400x.jpg?v=1674811941"
+                        alt="" style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130);font-size: 16px">Valentino - Bunch
+                        </h6>
+                        <p class="product-price" data-price="3350" style="color: rgb(133, 130, 130);font-size: 16px">
+                            From Rs:3350/-</p>
+                        <button class="btn btn-sm btn-outline-success"
+                            onclick="addToCartFromGrid('Valentino - Bunch',3350)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary" onclick="orderNow('Valentino - Bunch',3350)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Spring-Mix_400x.jpg?v=1571737876" alt=""
+                        style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130);font-size: 16px">Classic Bunch</h6>
+                        <p class="product-price" data-price="3800" style="color: rgb(133, 130, 130);font-size: 16px">
+                            From Rs:3800/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Classic Bunch',3800)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary" onclick="orderNow('Classic Bunch',3800)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="row g-4" id="row1">
+            <div class="col-6 col-md-3  ">
+                <div class="card h-100 w-100 ">
+                    <img src="https://theflowercompany.in/cdn/shop/products/bedofroses-megagrande_400x.jpg?v=1636347987"
+                        alt="" style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Bed of Roses - Mega
+                            Grande</h6>
+                        <p class="product-price" data-price="3100" style="color: rgb(133, 130, 130); font-size: 16px;">
+                            From Rs:3100/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Bed of Roses - Mega Grande',3100)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-success add-cart-btn"
+                            onclick="orderNow('Bed of Roses - Mega Grande',3100)">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Exoticmix-grandecubo_e0818358-9ad5-4994-92cc-6fc3944bce0c_400x.jpg?v=1639591843"
+                        alt="" style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130); font-size: 16px;">Wild Mix - Grande
+                            Cubo</h6>
+                        <p class="product-price" data-price="3300" style="color: rgb(133, 130, 130);font-size: 16px;">
+                            From Rs:3300/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Wild Mix - Grande Cubo',3300)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Wild Mix - Grande Cubo',3300)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 ">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/OctagonalGrande-WildMix_400x.jpg?v=1632560061"
+                        alt="" style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130);font-size: 16px">Classic Valentine
+                            Bunch
+                        </h6>
+                        <p class="product-price" data-price="3500" style="color: rgb(133, 130, 130);font-size: 16px">
+                            From Rs:3500/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="addToCartFromGrid('Classic Valentine Bunch',3500)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Classic Valentine Bunch',3500)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class=" col-6 col-md-3 ">
+                <div class="card h-100 w-100">
+                    <img src="https://theflowercompany.in/cdn/shop/products/Wildernessinabunch_400x.jpg?v=1637003808"
+                        alt="" style="height: 300px;">
+                    <div class="card-body text-center">
+                        <h6 class="product-name" style="color: rgb(133, 130, 130);font-size: 16px">Wilderness ( in a
+                            bunch )</h6>
+                        <p class="product-price" data-price="1500" style="color: rgb(133, 130, 130);font-size: 16px">
+                            From Rs:1500/-</p>
+                        <button class="btn btn-sm btn-outline-success "
+                            onclick="orderNow('Wilderness ( in a bunch )',1500)">
+                            Add to Cart
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-primary"
+                            onclick="orderNow('Wilderness ( in a bunch )',1500)">
+                            Order Now
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <br>
+
+
+
+
+
+
+
+    <br><br>
+
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4">
+
+                <h5 id="modalProductName"></h5>
+                <p id="modalPrice" class="fw-bold"></p>
+
+                <input type="text" id="cityInput" class="form-control mb-3" placeholder="Enter City">
+
+                <div class="d-flex align-items-center mb-3">
+                    <button class="btn btn-outline-secondary" onclick="changeQty(-1)">−</button>
+                    <span id="qty" class="mx-3">1</span>
+                    <button class="btn btn-outline-secondary" onclick="changeQty(1)">+</button>
+                </div>
+
+                <button class="btn w-100" style="background:#f3bfdc" onclick="confirmAddToCart()">
+                    ADD TO CART
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="orderModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4">
+
+                <h5 id="orderProductName"></h5>
+
+                <input type="text" id="orderName" class="form-control mb-2" placeholder="Name">
+                <input type="text" id="orderPlace" class="form-control mb-2" placeholder="Place">
+
+                <input type="number" id="orderQty" class="form-control mb-2" value="1" min="1">
+
+                <select id="paymentMode" class="form-control mb-2">
+                    <option value="">Payment Mode</option>
+                    <option>Cash on Delivery</option>
+                    <option>UPI</option>
+                    <option>Card</option>
+                </select>
+
+                <textarea id="orderAddress" class="form-control mb-3" placeholder="Address"></textarea>
+
+                <button class="btn btn-success w-100" onclick="submitOrder()">
+                    Submit
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <p id="introParagraph" style="text-align: center; font-size: 19px; font-style: oblique;">A flower boutique is a
+        charming place where
+        beauty, fragrance, and creativity come together. It offers a wide variety of fresh flowers, elegant
+        bouquets,
+        and artistic floral arrangements designed for every occasion. From weddings and birthdays to anniversaries
+        and
+        special celebrations, a flower boutique helps express emotions like love, joy, gratitude, and sympathy
+        through
+        carefully selected blooms.</p>
+
+
+    <div class="text-center">
+        <button class="btn-collection" id="order1" onclick="showCollection()" style="margin-top: 10px;">Order
+            Now</button>
+    </div>
+    <br><br><br>
+    <section id="ten">
+        <div class="row gx-0 ">
+            <div>
+                <div class="row lg-3 d-flex">
+
+                    <img class="img-fluid" id="img1"
+                        src="https://theflowercompany.in/cdn/shop/files/Ethereal-GrandeRonde_400x.jpg?v=1683271210"
+                        alt="">
+                </div>
+            </div>
+
+
+            <div class=" border border-dark border-2 rounded p-3 content-box">
+
+                <h2 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">WELCOME TO
+                    PETAL PALACE,</h2>
+                <br>
+                <p class="text-start" style="text-align: justify;" id="petalsize">Petal Palace is a delightful flower
+                    boutique
+                    where
+                    elegance, freshness, and creativity bloom together. We specialize in crafting beautiful floral
+                    arrangements using carefully selected, farm-fresh flowers that capture natural charm and lasting
+                    beauty. Our collection includes classic roses, graceful lilies, exotic orchids, vibrant
+                    sunflowers,
+                    and seasonal flowers, all thoughtfully designed to suit different moods and occasions. <br><br>
+                    We
+                    also provide gift arrangements, decorative plants, and custom orders tailored to individual
+                    preferences. With a strong commitment to quality, artistic design, and friendly customer
+                    service,
+                    Petal Palace transforms flowers into meaningful expressions of love, celebration, and joy,
+                    making
+                    every visit a memorable floral experience.Petal Palace is a premium flower boutique known for
+                    its
+                    artistic designs and exceptional floral craftsmanship. <br><br>The boutique brings together
+                    nature’s
+                    finest blooms to create arrangements that reflect style, emotion, and elegance. Every flower is
+                    chosen for its freshness and beauty, ensuring long-lasting arrangements that leave a lasting
+                    impression. Petal Palace aims to create unforgettable experiences by turning simple flowers into
+                    symbols of love, happiness, and heartfelt expression.</p> <br>
+                <div class="text-center">
+                    <p class=" fst-italic fs-5" style="color: rgb(83, 143, 221);">Where Flowers Speak from the
+                        Heart...
+                    </p>
+                    <p class=" fst-italic fs-5" style="color: rgb(83, 143, 221);">Elegance in Every Petal...</p>
+                    <p class=" fst-italic fs-5" style="color: rgb(83, 143, 221);">Crafting Emotions with Flowers...
+                    </p>
+
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+    <br>
+
+
+
+
+
+    <footer class=" text-light" id="one" style="background-color:rgb(226, 231, 235) ;">
+        <div class="container">
+            <div class="row  ">
+
+
+                <div id="con1">
+                    <h5 class="fst-italic fs-4" style="color: black;" id="con2">Contact Us</h5> <br>
+                    <p style=" color: black;"><i class="fa-solid fa-location-dot"></i> India,Tamilnadu</p>
+                    <p style="color: black;" id="aa">
+                        <i class="fa-solid fa-phone text-dark"></i>
+                        <a href="tel:+911234567890" style="color:blue; text-decoration:none;">
+                            Call +91 1234567890
+                        </a>
+                    </p>
+
+                    <p style="color: black;" id="aa">
+                        <i class="fa-regular fa-message text-dark"></i>
+                        <a href="mailto:petalpalace@gmail.com" style="color:blue; text-decoration:none;">
+                            petalpalace@gmail.com
+                        </a>
+                    </p>
+
+                </div>
+
+
+                <div>
+                    <h5 class="fst-italic fs-4 " style="color: black;" id="tenpet">Petal Palace</h5> <br>
+                    <p style="color: black;" id="tenpet1">PETAL PALACE, is a stylish flower boutique known for its
+                        fresh, vibrant blooms and creative floral designs. We specialize in transforming flowers into
+                        elegant arrangements that add beauty and emotion
+                        to every special moment. </p>
+
+                    <div class="fst-italic fs-4 " id="ten00">
+                        <div id="ten002">
+
+                            <a href="https://www.linkedin.com/in/jayamurugan-v-7a3571269" class="text-dark  fs-5"><i
+                                    class="fa-brands fa-linkedin" id="two"></i></a>
+                            <a href="https://x.com/JayaMurugan2003" class="text-dark fs-5"><i
+                                    class="fa-brands fa-twitter" id="two"></i></a>
+                            <a href="#" class="text-dark fs-5"><i class="fa-brands fa-instagram" id="two"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="ten100">
+                    <h5 class="fst-italic fs-4 " style="color: black;" id="h101">Opening Hours</h5> <br>
+                    <p style="color: black;" id="h102">Weekdays: 9.00 AM - 9.30 PM</p>
+                    <p style="color: black;" id="h103"> Weekends: 9.00 AM - 11.00 PM</p>
+                </div>
+            </div>
+
+
+            <div>
+                <p style="color: black;" id="ten001">© 2025 All Rights Reserved www.petalpalace.com</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+
+
+        function showCollection() {
+            const hero = document.getElementById("hero");
+            const collection = document.getElementById("collection");
+            const paragraph = document.getElementById("ten");
+            const welcome = document.getElementById("welcomeSection");
+
+            // Hide unwanted sections
+            if (hero) hero.style.display = "none";
+            if (paragraph) paragraph.style.display = "none";
+            if (welcome) welcome.style.display = "none";
+
+            // Show collection
+            collection.style.display = "block";
+            collection.classList.add("active");
+
+            // Scroll to collection
+            collection.scrollIntoView({ behavior: "smooth" });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            document.querySelectorAll(".add-cart-btn").forEach(btn => {
+                btn.addEventListener("click", function () {
+                    const card = this.closest(".card-body");
+                    const name = card.querySelector(".product-name").innerText;
+                    const price = card.querySelector(".product-price").dataset.price;
+                    openCartModal(name, price);
+                });
+            });
+
+        });
+
+
+        let users = [];
+        let loggedInUser = null;
+
+        function openLoginModal() {
+            new bootstrap.Modal(
+                document.getElementById("loginModal")
+            ).show();
+        }
+
+        function registerUser() {
+            const name = regName.value.trim();
+            const email = regEmail.value.trim();
+            const password = regPassword.value.trim();
+
+            if (!name || !email || !password) {
+                alert("Fill all fields");
+                return;
+            }
+
+            const exists = users.find(u => u.email === email);
+            if (exists) {
+                alert("User already exists");
+                return;
+            }
+
+            users.push({ name, email, password });
+            alert("Account created ✅");
+
+            console.log(users);
+            backToLogin();
+        }
+
+
+        function loginUser() {
+            const email = loginEmail.value.trim();
+            const password = loginPassword.value.trim();
+
+            const user = users.find(
+                u => u.email === email && u.password === password
+            );
+
+            if (!user) {
+                alert("Invalid email or password ❌");
+                return;
+            }
+
+            loggedInUser = user;
+            updateCartCount();
+            console.log("Logged in user:", loggedInUser);
+
+            alert("Welcome " + user.name + " 🎉");
+
+            bootstrap.Modal.getInstance(
+                document.getElementById("loginModal")
+            ).hide();
+        }
+
+        function toggleMenu() {
+            document.querySelector(".list").classList.toggle("show");
+        }
+
+
+        // order now
+
+        let orders = [];
+        let orderProduct = {};
+
+        function orderNow(name, price) {
+            orderProduct = { name, price };
+
+            document.getElementById("orderProductName").innerText =
+                name + " - Rs." + price;
+
+            new bootstrap.Modal(
+                document.getElementById("orderModal")
+            ).show();
+        }
+
+        function submitOrder() {
+
+            const customerName = document.getElementById("orderName").value.trim();
+            const place = document.getElementById("orderPlace").value.trim();
+            const qty = document.getElementById("orderQty").value;
+            const payment = document.getElementById("paymentMode").value;
+            const address = document.getElementById("orderAddress").value.trim();
+
+            if (!customerName || !place || !payment || !address) {
+                alert("Please fill all details");
+                return;
+            }
+
+            const order = {
+                customerName,
+                place,
+                product: orderProduct.name,
+                price: orderProduct.price,
+                quantity: qty,
+                paymentMode: payment,
+                address,
+                orderTime: new Date().toLocaleString()
+            };
+
+            orders.push(order);
+
+            console.log("All Orders:", orders);
+
+            alert("✅ Order submitted successfully");
+
+            bootstrap.Modal.getInstance(
+                document.getElementById("orderModal")
+            ).hide();
+        }
+
+
+        function openLoginModal() {
+            new bootstrap.Modal(
+                document.getElementById("loginModal")
+            ).show();
+        }
+
+
+        function openCreateAccount() {
+            loginBox.classList.add("d-none");
+            forgotBox.classList.add("d-none");
+            createAccountBox.classList.remove("d-none");
+        }
+
+        function openForgotPassword() {
+            loginBox.classList.add("d-none");
+            createAccountBox.classList.add("d-none");
+            forgotBox.classList.remove("d-none");
+        }
+
+        function backToLogin() {
+            createAccountBox.classList.add("d-none");
+            forgotBox.classList.add("d-none");
+            loginBox.classList.remove("d-none");
+        }
+
+        function forgotPassword() {
+            const email = forgotEmail.value.trim();
+
+            const user = users.find(u => u.email === email);
+
+            if (!user) {
+                alert("Email not registered ❌");
+                return;
+            }
+
+            alert("Your password is: " + user.password + " (demo only)");
+            backToLogin();
+        }
+
+
+
+        let cart = [];
+        let selectedProduct = {};
+        let quantity = 1;
+
+        function addToCartFromGrid(name, price) {
+
+            // login check
+            if (!loggedInUser) {
+                alert("Please login to add items to cart");
+                openLoginModal();
+                return;
+            }
+
+            // check if item already exists
+            const item = cart.find(
+                p => p.name === name && p.user === loggedInUser.email
+            );
+
+            if (item) {
+                item.qty += 1;
+            } else {
+                cart.push({
+                    name,
+                    price,
+                    qty: 1,
+                    user: loggedInUser.email
+                });
+            }
+
+            console.log("🛒 Cart:", cart);
+            updateCartCount();   // 👈 ADD THIS
+            alert("✅ Added to cart");
+        }
+
+
+        function updateCartCount() {
+            const cartCount = document.getElementById("cartCount");
+
+            // count only logged-in user's items
+            const userCart = cart.filter(
+                item => item.user === loggedInUser?.email
+            );
+
+            const totalQty = userCart.reduce(
+                (sum, item) => sum + item.qty, 0
+            );
+
+            if (totalQty > 0) {
+                cartCount.innerText = totalQty;
+                cartCount.style.display = "inline-block";
+            } else {
+                cartCount.style.display = "none";
+            }
+        }
+
+
+
+
+        function toggleSearch() {
+            const overlay = document.getElementById("searchOverlay");
+            const input = document.getElementById("searchInput");
+
+            overlay.style.display = "flex";
+            input.value = "";
+            input.focus();
+
+            document.querySelectorAll(".card").forEach(card => {
+                card.parentElement.style.display = "block";
+            });
+
+            document.getElementById("noResult").style.display = "none";
+        }
+
+        function closeSearch() {
+            document.getElementById("searchOverlay").style.display = "none";
+        }
+
+
+        function searchFlowers() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const cards = document.querySelectorAll(".card");
+            let found = false;
+
+            cards.forEach(card => {
+                const name = card.querySelector(".product-name").innerText.toLowerCase();
+
+                if (name.includes(input)) {
+                    card.parentElement.style.display = "block";
+                    found = true;
+                } else {
+                    card.parentElement.style.display = "none";
+                }
+            });
+
+            document.getElementById("noResult").style.display =
+                found || input === "" ? "none" : "block";
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
+<style>
+    @media (max-width: 320px) {
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        .one {
+            background-color: rgb(226, 231, 235);
+            height: 70px;
+            width: 100vw;
+        }
+
+        #t1 {
+            display: none;
+            text-align: center;
+            margin-left: 0px;
+            margin-top: -20px;
+            color: green;
+            /* position: relative; */
+            font-size: 12px;
+
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -100px;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        #ten1 {
+            font-size: 10px;
+            margin-left: -30px;
+            margin-top: -5px;
+        }
+
+        #ten2 {
+            font-size: 10px;
+            margin-left: -40px;
+            margin-top: -5px;
+        }
+
+        #ten3 {
+            font-size: 10px;
+            margin-left: -50px;
+            margin-top: -5px;
+        }
+
+        #ten4 {
+            font-size: 10px;
+            margin-left: -42px;
+            margin-top: -5px;
+        }
+
+        .list {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            justify-content: center;
+            margin-top: 10px;
+
+        }
+
+        .list>li {
+            position: relative;
+        }
+
+
+        .list>li>a {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .index {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        .index:hover {
+            color: rgb(35, 124, 156);
+        }
+
+        .arrow0 {
+            margin-left: 240px;
+            margin-top: -55px;
+            font-size: 12px;
+        }
+
+        #aa {
+            color: black;
+        }
+
+        .arrow,
+        .arrow2,
+        .arrow0 a {
+            text-decoration: none;
+        }
+
+        #aa:hover {
+            color: rgb(87, 168, 194);
+        }
+
+        .submenu {
+            list-style: none;
+            position: absolute;
+            min-width: 150px;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 0;
+            margin: 0;
+            display: none;
+            z-index: 9999;
+            font-size: 13px;
+            margin-left: -40px;
+
+
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 12px;
+            color: black;
+            background-color: rgb(226, 231, 235);
+            text-decoration: none;
+            /* border: 1px solid; */
+        }
+
+        .submenu li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+        #submenu1 {
+            list-style: none;
+            position: absolute;
+            min-width: 130px;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 0;
+            margin: 0;
+            display: none;
+            z-index: 9999;
+            font-size: 13px;
+            margin-left: -50px;
+
+        }
+
+        #submenu1 li a {
+            display: block;
+            padding: 12px;
+            color: black;
+            background-color: rgb(226, 231, 235);
+            text-decoration: none;
+            /* border: 1px solid; */
+        }
+
+        #submenu1 li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        #dropdown1:hover #submenu1 {
+            display: block;
+        }
+
+        #searchOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+        }
+
+        .search-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+        }
+
+        #hero {
+            margin-top: -78px;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .btn-collection {
+            position: absolute;
+            margin-left: -55px;
+            margin-top: -100px;
+            border: none;
+            background-color: rgb(210, 222, 232);
+            height: 35px;
+            border-radius: 3px;
+        }
+
+        .btn-collection:hover {
+            cursor: pointer;
+            background-color: lightsteelblue;
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        #collection {
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 3s ease;
+        }
+
+        #collection.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .login-btn {
+            background: #f3bfdc;
+            border: none;
+            color: #000;
+            padding: 12px;
+            letter-spacing: 3px;
+        }
+
+        .forgot-link {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #888;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .create-link {
+            color: #000;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .create-link:hover {
+            text-decoration: underline;
+        }
+
+        #ten100 {
+            margin-top: 30px;
+            /* margin-left: -50px; */
+            text-align: center;
+        }
+
+        #ten001 {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #ten002 {
+            text-align: center;
+        }
+
+        #ten003 {
+            margin-top: 100px;
+            /* text-align: center; */
+        }
+
+        #tenpet {
+            text-align: center;
+        }
+
+        #tenpet1 {
+            text-align: center;
+            font-style: italic;
+        }
+
+        #con1 {
+            text-align: center;
+        }
+
+
+        .img-fluid {
+
+            height: 850px;
+            width: 650px;
+            margin-left: 5px;
+        }
+
+        .content-box {
+
+            width: 580px;
+        }
+
+        #allcollection {
+
+            margin-top: -35px;
+            color: rgb(103, 115, 131);
+        }
+
+        .product-col {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        #ten .col-6 {
+            width: 100%;
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+
+        #row1 {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .col-6,
+        .col-md-3 {
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            width: 50%;
+            max-width: 250px;
+            margin: 0 auto 20px;
+            margin-left: 5px;
+        }
+
+        .container {
+            margin: 0 auto;
+
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        #fbox {
+            margin-top: -50px;
+            text-align: center;
+        }
+
+    }
+
+
+
+
+
+
+
+    @media (min-width: 375px) {
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .one {
+            background-color: rgb(226, 231, 235);
+            min-height: 80px;
+            width: 100%;
+
+        }
+
+        #t1 {
+            display: none;
+            text-align: center;
+            margin-left: 0px;
+            margin-top: -20px;
+            color: green;
+            /* position: relative; */
+            font-size: 12px;
+
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -100px;
+            font-size: 18px;
+            font-style: italic;
+
+        }
+
+        #ten1 {
+            font-size: 10px;
+            margin-left: -20px;
+            margin-top: 0px;
+        }
+
+        #ten2 {
+            font-size: 10px;
+            margin-left: -40px;
+            margin-top: 0px;
+        }
+
+        #ten3 {
+            font-size: 10px;
+            margin-left: -50px;
+            margin-top: 0px;
+        }
+
+        #ten4 {
+            font-size: 10px;
+            margin-left: -42px;
+            margin-top: 0px;
+        }
+
+        .list {
+            display: flex;
+            /* align-items: center; */
+
+            list-style: none;
+            gap: 50px;
+            /* justify-content: center; */
+            margin-top: 10px;
+
+        }
+
+        .list>li {
+            position: relative;
+        }
+
+
+        .list>li>a {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .index {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            white-space: nowrap;
+        }
+
+        .index:hover {
+            color: rgb(35, 124, 156);
+        }
+
+        .arrow0 {
+            margin-left: 260px;
+            margin-top: -55px;
+            font-size: 12px;
+        }
+
+        #aa {
+            color: black;
+        }
+
+        .arrow,
+        .arrow2,
+        .arrow0 a {
+            text-decoration: none;
+        }
+
+        #aa:hover {
+            color: rgb(87, 168, 194);
+        }
+
+
+        .submenu {
+            list-style: none;
+            position: absolute;
+            min-width: 150px;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 0;
+            margin: 0;
+            display: none;
+            z-index: 9999;
+            font-size: 13px;
+
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 12px;
+            color: black;
+            background-color: rgb(226, 231, 235);
+            text-decoration: none;
+            /* border: 1px solid; */
+        }
+
+        .submenu li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+        #dropdown1 {
+            position: relative;
+        }
+
+        #dropdown1:hover #submenu1 {
+            display: block;
+        }
+
+        #submenu1 {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgb(226, 231, 235);
+            min-width: 110px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 99999;
+            margin-left: 0px;
+            font-size: 13px;
+
+        }
+
+        #submenu1 li a {
+            display: block;
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+        }
+
+        #submenu1 li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        #searchOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+        }
+
+        .search-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+        }
+
+        #hero {
+            margin-top: -78px;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+            width: 100%;
+
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .btn-collection {
+            position: absolute;
+            margin-left: -55px;
+            margin-top: -100px;
+            border: none;
+            background-color: rgb(210, 222, 232);
+            height: 35px;
+            border-radius: 3px;
+        }
+
+        .btn-collection:hover {
+            cursor: pointer;
+            background-color: lightsteelblue;
+        }
+
+        #collection {
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 3s ease;
+        }
+
+        #collection.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .login-btn {
+            background: #f3bfdc;
+            border: none;
+            color: #000;
+            padding: 12px;
+            letter-spacing: 3px;
+        }
+
+        .forgot-link {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #888;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .create-link {
+            color: #000;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .create-link:hover {
+            text-decoration: underline;
+        }
+
+        #ten100 {
+            margin-top: 10px;
+            margin-left: 0px;
+
+            text-align: center;
+        }
+
+        #ten001 {
+            margin-top: 20px;
+            text-align: center;
+            margin-left: 0px;
+        }
+
+        #ten002 {
+            text-align: center;
+            margin-left: 30px;
+            margin-top: -20px;
+
+
+        }
+
+        #ten003 {
+            margin-top: 100px;
+            /* text-align: center; */
+        }
+
+        #tenpet {
+            text-align: center;
+            /* margin-left: -400px; */
+
+            display: none;
+
+        }
+
+        #tenpet1 {
+            display: none;
+            text-align: center;
+            font-style: italic;
+            /* margin-left: -400px; */
+
+        }
+
+        #con1 {
+            text-align: center;
+            margin-left: 10px;
+
+        }
+
+        #fbox {
+            margin-top: -60px;
+
+            text-align: center;
+        }
+
+        #row1 {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        #introParagraph {
+            width: 100%;
+            max-width: 100%;
+            padding: 15px;
+
+        }
+
+        .img-fluid {
+
+            width: 100%;
+            height: auto;
+
+        }
+
+        .content-box {
+
+            width: 100%;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        #ten .row {
+            flex-direction: column;
+        }
+
+
+        .welcome-title {
+            font-size: 16px;
+        }
+
+        .content-box {
+            margin-left: 0px;
+            padding: 10px;
+            font-size: 12px;
+        }
+
+        #petalsize {
+            text-align: justify;
+            font-size: 13px;
+        }
+
+        #order1 {
+            margin-left: -30px;
+        }
+
+        #one {
+            width: 100%;
+        }
+
+        #boxcollection .card img {
+            height: 140px;
+            object-fit: cover;
+        }
+
+        #boxcollection .product-name,
+        #boxcollection .product-price {
+            font-size: 12px;
+        }
+
+        #boxcollection .btn {
+            font-size: 11px;
+            padding: 4px 6px;
+            margin-top: 4px;
+        }
+
+        #allcollection {
+
+            margin-left: 250px;
+            margin-top: -35px;
+            color: rgb(103, 115, 131);
+        }
+
+
+        #row1 {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .col-6,
+        .col-md-3 {
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            width: 50%;
+            max-width: 250px;
+            margin: 0 auto 20px;
+            margin-left: 30px;
+        }
+
+        .container {
+            margin: 0 auto;
+
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+    }
+
+
+
+    @media (min-width: 425px) {
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .one {
+            background-color: rgb(226, 231, 235);
+            min-height: 80px;
+            width: 100%;
+
+        }
+
+        #t1 {
+            display: none;
+            text-align: center;
+            margin-left: 0px;
+            margin-top: -20px;
+            color: green;
+            /* position: relative; */
+            font-size: 12px;
+
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -50px;
+            font-size: 18px;
+            font-style: italic;
+
+        }
+
+        #ten1 {
+            font-size: 10px;
+            margin-left: 40px;
+            margin-top: 0px;
+        }
+
+        #ten2 {
+            font-size: 10px;
+            margin-left: -40px;
+            margin-top: 0px;
+        }
+
+        #ten3 {
+            font-size: 10px;
+            margin-left: -50px;
+            margin-top: 0px;
+        }
+
+        #ten4 {
+            font-size: 10px;
+            margin-left: -42px;
+            margin-top: 0px;
+        }
+
+        .list {
+            display: flex;
+            /* align-items: center; */
+
+            list-style: none;
+            gap: 50px;
+            /* justify-content: center; */
+            margin-top: 10px;
+
+        }
+
+        .list>li {
+            position: relative;
+        }
+
+
+        .list>li>a {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .index {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            white-space: nowrap;
+        }
+
+        .index:hover {
+            color: rgb(35, 124, 156);
+        }
+
+        .arrow0 {
+            margin-left: 330px;
+            margin-top: -55px;
+            font-size: 12px;
+        }
+
+        #aa {
+            color: black;
+        }
+
+        .arrow,
+        .arrow2,
+        .arrow0 a {
+            text-decoration: none;
+        }
+
+        #aa:hover {
+            color: rgb(87, 168, 194);
+        }
+
+
+        .submenu {
+            list-style: none;
+            position: absolute;
+            min-width: 150px;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 0;
+            margin: 0;
+            display: none;
+            z-index: 9999;
+            font-size: 13px;
+
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 12px;
+            color: black;
+            background-color: rgb(226, 231, 235);
+            text-decoration: none;
+            /* border: 1px solid; */
+        }
+
+        .submenu li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+        #dropdown1 {
+            position: relative;
+        }
+
+        #dropdown1:hover #submenu1 {
+            display: block;
+        }
+
+        #submenu1 {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgb(226, 231, 235);
+            min-width: 110px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 99999;
+            margin-left: 0px;
+            font-size: 13px;
+
+        }
+
+        #submenu1 li a {
+            display: block;
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+        }
+
+        #submenu1 li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        #searchOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+        }
+
+        .search-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+        }
+
+        #hero {
+            margin-top: -78px;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+            width: 100%;
+
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .btn-collection {
+            position: absolute;
+            margin-left: -55px;
+            margin-top: -100px;
+            border: none;
+            background-color: rgb(210, 222, 232);
+            height: 35px;
+            border-radius: 3px;
+        }
+
+        .btn-collection:hover {
+            cursor: pointer;
+            background-color: lightsteelblue;
+        }
+
+        #collection {
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 3s ease;
+        }
+
+        #collection.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .login-btn {
+            background: #f3bfdc;
+            border: none;
+            color: #000;
+            padding: 12px;
+            letter-spacing: 3px;
+        }
+
+        .forgot-link {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #888;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .create-link {
+            color: #000;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .create-link:hover {
+            text-decoration: underline;
+        }
+
+        #ten100 {
+            margin-top: 10px;
+            margin-left: 0px;
+
+            text-align: center;
+        }
+
+        #ten001 {
+            margin-top: 20px;
+            text-align: center;
+            margin-left: 0px;
+        }
+
+        #ten002 {
+            text-align: center;
+            margin-left: 30px;
+            margin-top: -20px;
+
+
+        }
+
+        #ten003 {
+            margin-top: 100px;
+            /* text-align: center; */
+        }
+
+        #tenpet {
+            text-align: center;
+            /* margin-left: -400px; */
+
+            display: none;
+
+        }
+
+        #tenpet1 {
+            display: none;
+            text-align: center;
+            font-style: italic;
+            /* margin-left: -400px; */
+
+        }
+
+        #con1 {
+            text-align: center;
+            margin-left: 10px;
+
+        }
+
+        #fbox {
+            margin-top: -80px;
+
+            text-align: center;
+        }
+
+        #row1 {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        #introParagraph {
+            width: 100%;
+            max-width: 100%;
+            padding: 15px;
+
+        }
+
+        .img-fluid {
+
+            width: 100%;
+            height: auto;
+
+        }
+
+        .content-box {
+
+            margin-top: 20px;
+            width: 100%;
+            justify-content: center;
+            align-self: center;
+        }
+
+        #ten .row {
+            flex-direction: column;
+        }
+
+
+        .welcome-title {
+            font-size: 16px;
+        }
+
+
+        #petalsize {
+            text-align: justify;
+            font-size: 13px;
+        }
+
+        #order1 {
+            margin-left: -30px;
+        }
+
+        #one {
+            width: 100%;
+        }
+
+        #boxcollection .card img {
+            height: 140px;
+            object-fit: cover;
+        }
+
+        #boxcollection .product-name,
+        #boxcollection .product-price {
+            font-size: 12px;
+        }
+
+        #boxcollection .btn {
+            font-size: 11px;
+            padding: 4px 6px;
+            margin-top: 4px;
+        }
+
+        #allcollection {
+
+            margin-left: 250px;
+            margin-top: -35px;
+            color: rgb(103, 115, 131);
+        }
+
+        #fbox {
+            margin-top: -50px;
+            text-align: center;
+        }
+
+
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        #row1 {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .col-6,
+        .col-md-3 {
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            width: 50%;
+            max-width: 250px;
+            margin: 0 auto 20px;
+            margin-left: 55px;
+        }
+
+        .container {
+            margin: 0 auto;
+
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+    }
+
+
+
+
+    @media (min-width: 768px) {
+        .one {
+            background-color: rgb(226, 231, 235);
+            height: 110px;
+            width: 1439px;
+
+        }
+
+        #t1 {
+            display: none;
+            text-align: center;
+            margin-left: 0px;
+            margin-top: -20px;
+            color: green;
+            /* position: relative; */
+            font-size: 12px;
+
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -800px;
+            font-size: 25px;
+            font-style: italic;
+
+        }
+
+        #ten1 {
+            font-size: 15px;
+            margin-left: -530px;
+            margin-top: -5px;
+        }
+
+        #ten2 {
+            font-size: 15px;
+            margin-left: -410px;
+            margin-top: -5px;
+        }
+
+        #ten3 {
+            font-size: 15px;
+            margin-left: -400px;
+            margin-top: -5px;
+        }
+
+        #ten4 {
+            font-size: 15px;
+            margin-left: -280px;
+            margin-top: -5px;
+        }
+
+        .list {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            justify-content: center;
+            margin-top: 10px;
+
+        }
+
+        .list>li {
+            position: relative;
+        }
+
+
+        .list>li>a {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .index {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        .index:hover {
+            color: rgb(35, 124, 156);
+        }
+
+        .arrow0 {
+            margin-left: 550px;
+            margin-top: -63px;
+            font-size: 15px;
+        }
+
+        #aa {
+            color: black;
+        }
+
+        .arrow,
+        .arrow2,
+        .arrow0 a {
+            text-decoration: none;
+        }
+
+        #aa:hover {
+            color: rgb(87, 168, 194);
+        }
+
+        .submenu {
+            list-style: none;
+            position: absolute;
+            min-width: 150px;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 0;
+            margin: 0;
+            display: none;
+            z-index: 9999;
+            font-size: 15px;
+            margin-left: -530px;
+
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 12px;
+            color: black;
+            background-color: rgb(226, 231, 235);
+            text-decoration: none;
+            /* border: 1px solid; */
+        }
+
+        .submenu li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+        #dropdown1 {
+            position: relative;
+        }
+
+        #dropdown1:hover #submenu1 {
+            display: block;
+        }
+
+        #submenu1 {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgb(226, 231, 235);
+            min-width: 100px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 99999;
+            margin-left: -400px;
+            font-size: 16px;
+
+
+        }
+
+        #submenu1 li a {
+            display: block;
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+        }
+
+        #submenu1 li a:hover {
+            background-color: #f2f2f2;
+        }
+
+
+
+        #searchOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+        }
+
+        .search-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+        }
+
+        #hero {
+            width: 100%;
+            margin-top: -78px;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .btn-collection {
+            position: absolute;
+            margin-left: -55px;
+            margin-top: -100px;
+            border: none;
+            background-color: rgb(210, 222, 232);
+            height: 55px;
+            width: 100px;
+            border-radius: 3px;
+        }
+
+        .btn-collection:hover {
+            cursor: pointer;
+            background-color: lightsteelblue;
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        #collection {
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 3s ease;
+        }
+
+        #collection.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .login-btn {
+            background: #f3bfdc;
+            border: none;
+            color: #000;
+            padding: 12px;
+            letter-spacing: 3px;
+        }
+
+        .forgot-link {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #888;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .create-link {
+            color: #000;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .create-link:hover {
+            text-decoration: underline;
+        }
+
+        #con1 {
+            margin-left: -10px;
+            margin-top: 100px;
+            font-size: 22px;
+        }
+
+        #con2 {
+            margin-left: 20px;
+            margin-top: -50px;
+        }
+
+        #ten100 {
+            margin-top: 30px;
+            margin-left: -10px;
+            font-size: 23px;
+
+        }
+
+        #h101 {
+            margin-left: 0px;
+            margin-top: -30px;
+        }
+
+        #tenpet {
+            text-align: center;
+            font-size: 23px;
+            margin-top: -220px;
+            margin-left: -10px;
+
+        }
+
+        #tenpet1 {
+            text-align: center;
+            font-size: 20px;
+            margin-left: -40px;
+
+        }
+
+        #ten001 {
+            text-align: center;
+            font-size: 21px;
+
+        }
+
+        #ten002 {
+
+            text-align: center;
+            font-size: 65px;
+            margin-top: -80px;
+        }
+
+        #ten003 {
+            margin-top: 100px;
+
+        }
+
+        #introParagraph {
+            width: 100%;
+
+        }
+
+        .img-fluid {
+
+            width: 100%;
+            height: auto;
+            margin: 0;
+        }
+
+        .content-box {
+
+            margin-top: 20px;
+            width: 100%;
+
+            justify-content: center;
+            align-self: center;
+        }
+
+        #ten .row {
+            display: flex;
+
+        }
+
+
+        .welcome-title {
+            font-size: 16px;
+        }
+
+
+
+        #petalsize {
+            font-size: 20px;
+        }
+
+        #order1 {
+            margin-left: -50px;
+        }
+
+        #one {
+            width: 100%;
+        }
+
+        #boxcollection .card img {
+            height: 140px;
+            object-fit: cover;
+        }
+
+        #boxcollection .product-name,
+        #boxcollection .product-price {
+            font-size: 12px;
+        }
+
+        #boxcollection .btn {
+            font-size: 11px;
+            padding: 4px 6px;
+            margin-top: 4px;
+        }
+
+        #allcollection {
+
+            margin-left: 250px;
+            margin-top: -35px;
+            color: rgb(103, 115, 131);
+        }
+
+      
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        #fbox {
+            margin-top: -50px;
+            text-align: center;
+        }
+
+        #row1 {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+
+        }
+
+        .col-6,
+        .col-md-3 {
+            width: 45%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            width: 220px;
+            max-width: 220px;
+            /* margin: 0; */
+        }
+
+        .container {
+            margin: 0 auto;
+
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+
+    }
+
+
+
+
+
+
+    @media (min-width: 1024px) {
+
+
+        .one {
+            background-color: rgb(226, 231, 235);
+            height: 80px;
+            width: 100vw;
+
+        }
+
+        #t1 {
+            display: none;
+            text-align: center;
+            margin-left: 0px;
+            margin-top: -20px;
+            color: green;
+            /* position: relative; */
+            font-size: 12px;
+
+        }
+
+        #t01 {
+            text-align: center;
+            color: green;
+            margin-top: -10px;
+            margin-left: -800px;
+            font-size: 25px;
+            font-style: italic;
+
+        }
+
+        #ten1 {
+            font-size: 15px;
+            margin-left: 200px;
+            margin-top: -30px;
+        }
+
+        #ten2 {
+            font-size: 15px;
+            margin-left: -20px;
+            margin-top: -30px;
+        }
+
+        #ten3 {
+            font-size: 15px;
+            margin-left: -20px;
+            margin-top: -30px;
+        }
+
+        #ten4 {
+            font-size: 15px;
+            margin-left: -20px;
+            margin-top: -30px;
+        }
+
+        .list {
+            display: flex;
+            list-style: none;
+            gap: 50px;
+            justify-content: center;
+            margin-top: 10px;
+
+        }
+
+        .list>li {
+            position: relative;
+        }
+
+
+        .list>li>a {
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        .index {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+
+        .index:hover {
+            color: rgb(35, 124, 156);
+        }
+
+        .arrow0 {
+            margin-left: 1060px;
+            margin-top: -45px;
+            font-size: 15px;
+        }
+
+        #aa {
+            color: black;
+        }
+
+        .arrow,
+        .arrow2,
+        .arrow0 a {
+            text-decoration: none;
+        }
+
+        #aa:hover {
+            color: rgb(87, 168, 194);
+        }
+
+        .submenu {
+            list-style: none;
+            position: absolute;
+            min-width: 150px;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            padding: 0;
+            margin: 0;
+            display: none;
+            z-index: 9999;
+            font-size: 15px;
+            margin-left: 230px;
+
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 12px;
+            color: black;
+            background-color: rgb(226, 231, 235);
+            text-decoration: none;
+            /* border: 1px solid; */
+        }
+
+        .submenu li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
+        }
+
+        #dropdown1 {
+            position: relative;
+        }
+
+        #dropdown1:hover #submenu1 {
+            display: block;
+        }
+
+        #submenu1 {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgb(226, 231, 235);
+            min-width: 150px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 99999;
+            margin-left: 0px;
+
+        }
+
+        #submenu1 li a {
+            display: block;
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+        }
+
+        #submenu1 li a:hover {
+            background-color: #f2f2f2;
+        }
+
+        #searchOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+        }
+
+        .search-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 350px;
+        }
+
+        #hero {
+            width: 100vw;
+            margin-top: -78px;
+            transition: transform 0.8s ease, opacity 0.8s ease;
+
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .btn-collection {
+            position: absolute;
+            margin-left: -55px;
+            margin-top: -100px;
+            border: none;
+            background-color: rgb(210, 222, 232);
+            height: 55px;
+            width: 100px;
+            border-radius: 3px;
+        }
+
+        .btn-collection:hover {
+            cursor: pointer;
+            background-color: lightsteelblue;
+        }
+
+        #hero.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        #collection {
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 3s ease;
+        }
+
+        #collection.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .login-btn {
+            background: #f3bfdc;
+            border: none;
+            color: #000;
+            padding: 12px;
+            letter-spacing: 3px;
+        }
+
+        .forgot-link {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #888;
+            text-decoration: none;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .create-link {
+            color: #000;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .create-link:hover {
+            text-decoration: underline;
+        }
+
+        #ten100 {
+            margin-top: -185px;
+            margin-left: 150px;
+            font-size: 20px;
+
+            text-align: center;
+        }
+
+        #ten001 {
+            margin-top: 20px;
+            text-align: center;
+            margin-left: 0px;
+            font-size: 18px;
+        }
+
+        #ten002 {
+            text-align: center;
+            margin-left: 300px;
+            margin-top: 150px;
+
+
+        }
+
+        #ten003 {
+            margin-top: 100px;
+
+        }
+
+        #tenpet {
+            background-color: rgb(226, 231, 235);
+            color: white;
+            display: block;
+            margin-left: 30px;
+            margin-top: -360px;
+        }
+
+        #tenpet1 {
+            background-color: rgb(226, 231, 235);
+            color: white;
+            display: block;
+            margin-left: 30px;
+
+
+        }
+
+        #con1 {
+            text-align: center;
+            margin-left: -200px;
+            margin-top: 230px;
+            font-size: 20px;
+
+        }
+
+        #introParagraph {
+            width: 100vw;
+
+        }
+
+        .img-fluid {
+
+            height: 970px;
+            width: 640px;
+            margin-left: 10px;
+        }
+
+
+
+        #ten .row {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+
+        .welcome-title {
+            font-size: 16px;
+        }
+
+        .content-box {
+            margin-top: -965px;
+            margin-left: 630px;
+            padding: 10px;
+            font-size: 12px;
+            width: 620px;
+            /* height: 850px; */
+        }
+
+        #petalsize {
+            font-size: 20px;
+        }
+
+        #order1 {
+            margin-left: -50px;
+        }
+
+        #one {
+            width: 100vw;
+        }
+
+        #boxcollection .card img {
+            height: 140px;
+            object-fit: cover;
+        }
+
+        #boxcollection .product-name,
+        #boxcollection .product-price {
+            font-size: 12px;
+        }
+
+        #boxcollection .btn {
+            font-size: 11px;
+            padding: 4px 6px;
+            margin-top: 4px;
+        }
+
+        #allcollection {
+
+            margin-left: 250px;
+            margin-top: -35px;
+            color: rgb(103, 115, 131);
+        }
+
+    
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        #fbox {
+            margin-top: -50px;
+            text-align: center;
+        }
+
+        #row1 {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+
+        }
+
+        .col-6,
+        .col-md-3 {
+            width: 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            width: 250px;
+            max-width: 280px;
+            /* margin: 0; */
+        }
+
+        .container {
+            margin: 0 auto;
+
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+
+
+
+
+
+
+    
+</style>
